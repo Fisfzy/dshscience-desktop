@@ -1,0 +1,10 @@
+# The dsh-plan-execute dual-face bundle patch: mounts the plan/execute dual-model
+# routing host plugin. The Web settings row is the same package's browser half
+# (`exports["./client"]` + package.json `dsh.client`) — client-modules discovers
+# it from this loader entry; no separate ui-plan-execute row is required.
+#
+# Applied via `dsh plugin --profile <name> add github:dsh-external/dsh-plan-execute`.
+
+- insert:
+    - id: plan-execute
+      name: '@deepseek-ai/dsh-plan-execute'

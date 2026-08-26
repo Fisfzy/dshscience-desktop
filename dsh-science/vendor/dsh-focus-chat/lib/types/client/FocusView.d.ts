@@ -1,0 +1,52 @@
+import type { MarkdownFileMentions } from '@deepseek-ai/dsh-client-ui-primitives';
+import type { TranslateNS } from '@deepseek-ai/dsh-client-ui-slots';
+import type { ConvViewProps } from '@deepseek-ai/dsh-client-ui-conversation/client';
+import type { TurnLocation } from '@deepseek-ai/dsh-client-runtime/client';
+type FocusTranslate = TranslateNS<'focus'>;
+/** One reflow-resistant scroll position (the chat view's saved shape). */
+export interface FocusScrollPosition {
+    /** Stable flow-item identity. */
+    anchorKey: string;
+    /** Anchor row top relative to the scrollport. */
+    anchorTop: number;
+    /** Raw scrollport offset at capture. */
+    scrollTop: number;
+}
+/** Owner currency of a closing assistant (the chat turn-tail owner shape). */
+export interface FocusTurnTailOwner {
+    /** Engine-owned closing turn boundary. */
+    turn: TurnLocation;
+    /** The closing assistant's seq. */
+    seq: number;
+    /** Open a filesystem path through the Host. */
+    openFile: (path: string) => void;
+}
+/** Injected business face of the focus view entry. */
+export interface FocusViewInjected {
+    /** Load one older page of history into the session window (chat-view semantics). */
+    loadOlder: () => void;
+    /** Open a workspace path through the Host (tool-row semantics). */
+    openFile: (path: string) => void;
+    /** Fork the session at one message seq (turn-tail branch semantics). */
+    forkAt: (seq: number) => void;
+    /** Prose file-mention vocabulary for a closing assistant (optional service). */
+    fileMentions: (owner: FocusTurnTailOwner) => MarkdownFileMentions | undefined;
+    /** Per-session scroll-position ledger (the chat view's persistence). */
+    scroll: {
+        save: (position: FocusScrollPosition | null) => void;
+        read: () => FocusScrollPosition | null;
+    };
+}
+/** Full props of the focus view entry: the conversation view kit, the injected face, and the focus locale seat. */
+export type FocusViewProps = ConvViewProps & FocusViewInjected & {
+    t: FocusTranslate;
+};
+/**
+ * The focus view slot entry: pure component over the composed props. Scroll
+ * follows the chat view's ledger: the resolved scrollport (the shared
+ * conversation column in the app, the view itself in tests) keeps reader
+ * positions saved continuously on scroll and restored on mount.
+ * @param props - conversation view standard kit and the focus locale seat.
+ */
+export declare function FocusView({ useSession, sessionId, useSessions, loadOlder, openFile, forkAt, fileMentions, scroll, t, }: FocusViewProps): import("react").JSX.Element;
+export {};

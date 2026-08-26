@@ -1,0 +1,20 @@
+{
+  "id": "zotero-harvest",
+  "version": "0.2.0",
+  "main": "./lib/index.js",
+  "description": "Literature harvesting into the local Zotero library: multi-source search (OpenAlex/arXiv/Crossref/Europe PMC/Semantic Scholar), OA download-link resolution (Unpaywall), deterministic sufficiency audit, save into Zotero (local API / offline sqlite / inbox), and reindex hook for zotero-wave-rag",
+  "engines": {
+    "dsh": ">=0.0.1"
+  },
+  "contributes": {
+    "tools": [
+      "lit_fetch",
+      "lit_paper_detail",
+      "lit_save",
+      "lit_sufficiency_check",
+      "lit_download_links",
+      "lit_review_run"
+    ],
+    "skills": []
+  }
+}

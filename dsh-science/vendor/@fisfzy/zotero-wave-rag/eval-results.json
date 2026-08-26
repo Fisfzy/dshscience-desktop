@@ -1,0 +1,2536 @@
+{
+  "naive": {
+    "metrics": {
+      "recallAt5": 0.8333333333333333,
+      "mrr": 0.8787878787878788,
+      "ndcgAt5": 0.7961560493695331,
+      "diversity": 0.8237770562770564
+    },
+    "cases": [
+      {
+        "id": "e01",
+        "query": "retrieval augmented generation survey for knowledge intensive tasks",
+        "type": "topic",
+        "ranked": [
+          "llm-recsys-survey",
+          "rag-recsys-survey",
+          "rag-survey",
+          "mmlu",
+          "truthfulqa"
+        ],
+        "relevant": [
+          "rag-survey",
+          "rag-recsys-survey",
+          "rag-eval"
+        ]
+      },
+      {
+        "id": "e02",
+        "query": "dense passage retrieval for open domain question answering",
+        "type": "direct",
+        "ranked": [
+          "dpr",
+          "natural-questions",
+          "rerank-cross",
+          "rag-eval",
+          "bm25-survey"
+        ],
+        "relevant": [
+          "dpr",
+          "natural-questions"
+        ]
+      },
+      {
+        "id": "e03",
+        "query": "graph based retrieval augmented generation with communities",
+        "type": "graph",
+        "ranked": [
+          "lightrag",
+          "rag-recsys-survey",
+          "llm-recsys-survey",
+          "selfrag",
+          "rag-fusion"
+        ],
+        "relevant": [
+          "graphrag",
+          "lightrag"
+        ]
+      },
+      {
+        "id": "e04",
+        "query": "vector databases and approximate nearest neighbor indexes",
+        "type": "topic",
+        "ranked": [
+          "vector-db-survey",
+          "ann-survey",
+          "milvus",
+          "lightrag",
+          "memorybank"
+        ],
+        "relevant": [
+          "vector-db-survey",
+          "ann-survey"
+        ]
+      },
+      {
+        "id": "e05",
+        "query": "survey of knowledge graph embeddings for link prediction",
+        "type": "direct",
+        "ranked": [
+          "kg-embeddings",
+          "rgnn",
+          "transe",
+          "mmlu",
+          "kg-rag"
+        ],
+        "relevant": [
+          "kg-embeddings"
+        ]
+      },
+      {
+        "id": "e06",
+        "query": "contrastive learning of sentence embeddings",
+        "type": "direct",
+        "ranked": [
+          "simcse",
+          "transe",
+          "hyde",
+          "kg-embeddings",
+          "colbert"
+        ],
+        "relevant": [
+          "simcse"
+        ]
+      },
+      {
+        "id": "e07",
+        "query": "language model agents with long term memory and tool use",
+        "type": "topic",
+        "ranked": [
+          "memorybank",
+          "react",
+          "toolformer",
+          "rag-survey",
+          "reflexion"
+        ],
+        "relevant": [
+          "memorybank",
+          "toolformer"
+        ]
+      },
+      {
+        "id": "e08",
+        "query": "benchmarks for evaluating llms and retrieval augmented generation",
+        "type": "topic",
+        "ranked": [
+          "llm-recsys-survey",
+          "rag-recsys-survey",
+          "rag-eval",
+          "lightrag",
+          "natural-questions"
+        ],
+        "relevant": [
+          "rag-eval",
+          "mmlu",
+          "natural-questions"
+        ]
+      },
+      {
+        "id": "e09",
+        "query": "how do knowledge graphs connect to retrieval augmentation pipelines",
+        "type": "cross",
+        "ranked": [
+          "rgnn",
+          "lightrag",
+          "truthfulqa",
+          "rag-recsys-survey",
+          "mmlu"
+        ],
+        "relevant": [
+          "graphrag",
+          "kg-embeddings",
+          "lightrag"
+        ]
+      },
+      {
+        "id": "e10",
+        "query": "large language models for conversational product recommendations",
+        "type": "graph",
+        "ranked": [
+          "llm-recsys-survey",
+          "rag-recsys-survey",
+          "rgnn",
+          "toolformer",
+          "truthfulqa"
+        ],
+        "relevant": [
+          "rag-recsys-survey"
+        ]
+      },
+      {
+        "id": "e11",
+        "query": "natural questions benchmark for question answering research",
+        "type": "direct",
+        "ranked": [
+          "dpr",
+          "natural-questions",
+          "rag-fusion",
+          "rag-eval",
+          "graphrag"
+        ],
+        "relevant": [
+          "natural-questions",
+          "dpr"
+        ]
+      },
+      {
+        "id": "e12",
+        "query": "which papers cover embedding methods in nlp",
+        "type": "topic",
+        "ranked": [
+          "transe",
+          "simcse",
+          "ann-survey",
+          "kg-embeddings",
+          "hyde"
+        ],
+        "relevant": [
+          "simcse",
+          "kg-embeddings"
+        ]
+      },
+      {
+        "id": "e13",
+        "query": "teaching language models to call external tools like calculators",
+        "type": "direct",
+        "ranked": [
+          "toolformer",
+          "react",
+          "llm-recsys-survey",
+          "kg-rag",
+          "rag-survey"
+        ],
+        "relevant": [
+          "toolformer"
+        ]
+      },
+      {
+        "id": "e14",
+        "query": "memory augmented conversational agents that remember sessions",
+        "type": "graph",
+        "ranked": [
+          "memorybank",
+          "reflexion",
+          "truthfulqa",
+          "llm-recsys-survey",
+          "rgnn"
+        ],
+        "relevant": [
+          "memorybank"
+        ]
+      },
+      {
+        "id": "e15",
+        "query": "rag evaluation robustness to noisy retrieved contexts",
+        "type": "graph",
+        "ranked": [
+          "rag-eval",
+          "selfrag",
+          "ragas",
+          "rag-recsys-survey",
+          "llm-recsys-survey"
+        ],
+        "relevant": [
+          "rag-eval",
+          "rag-survey"
+        ]
+      },
+      {
+        "id": "e16",
+        "query": "hnsw graph index for fast approximate similarity search",
+        "type": "graph",
+        "ranked": [
+          "ann-survey",
+          "vector-db-survey",
+          "simcse",
+          "transe",
+          "memorybank"
+        ],
+        "relevant": [
+          "ann-survey",
+          "vector-db-survey"
+        ]
+      },
+      {
+        "id": "e17",
+        "query": "retrieval indexes spanning both graphs and vector stores",
+        "type": "cross",
+        "ranked": [
+          "lightrag",
+          "milvus",
+          "bm25-survey",
+          "vector-db-survey",
+          "selfrag"
+        ],
+        "relevant": [
+          "lightrag",
+          "ann-survey",
+          "vector-db-survey"
+        ]
+      },
+      {
+        "id": "e18",
+        "query": "late interaction token level passage search with contextual embeddings",
+        "type": "direct",
+        "ranked": [
+          "colbert",
+          "transe",
+          "kg-embeddings",
+          "simcse",
+          "dpr"
+        ],
+        "relevant": [
+          "colbert"
+        ]
+      },
+      {
+        "id": "e19",
+        "query": "grounding large language models in knowledge graphs for question answering",
+        "type": "cross",
+        "ranked": [
+          "kg-rag",
+          "rgnn",
+          "llm-recsys-survey",
+          "react",
+          "rag-recsys-survey"
+        ],
+        "relevant": [
+          "kg-rag",
+          "graphrag",
+          "kg-embeddings"
+        ]
+      },
+      {
+        "id": "e20",
+        "query": "agents that interleave reasoning traces with tool actions and reflect on failures",
+        "type": "topic",
+        "ranked": [
+          "react",
+          "kg-embeddings",
+          "reflexion",
+          "lightrag",
+          "rgnn"
+        ],
+        "relevant": [
+          "react",
+          "reflexion",
+          "toolformer"
+        ]
+      },
+      {
+        "id": "e21",
+        "query": "automated faithfulness and relevance metrics for rag pipelines",
+        "type": "graph",
+        "ranked": [
+          "ragas",
+          "rag-eval",
+          "lightrag",
+          "ann-survey",
+          "kg-embeddings"
+        ],
+        "relevant": [
+          "ragas",
+          "rag-eval"
+        ]
+      },
+      {
+        "id": "e22",
+        "query": "generative recommendation with large language models",
+        "type": "direct",
+        "ranked": [
+          "llm-recsys-survey",
+          "rag-recsys-survey",
+          "toolformer",
+          "rag-fusion",
+          "attention"
+        ],
+        "relevant": [
+          "llm-recsys-survey",
+          "rag-recsys-survey"
+        ]
+      }
+    ]
+  },
+  "wave-full": {
+    "metrics": {
+      "recallAt5": 0.8484848484848485,
+      "mrr": 0.9469696969696969,
+      "ndcgAt5": 0.8297038632917907,
+      "diversity": 0.8270003607503608
+    },
+    "cases": [
+      {
+        "id": "e01",
+        "query": "retrieval augmented generation survey for knowledge intensive tasks",
+        "type": "topic",
+        "ranked": [
+          "rag-survey",
+          "rag-recsys-survey",
+          "llm-recsys-survey",
+          "kg-rag",
+          "mmlu"
+        ],
+        "relevant": [
+          "rag-survey",
+          "rag-recsys-survey",
+          "rag-eval"
+        ]
+      },
+      {
+        "id": "e02",
+        "query": "dense passage retrieval for open domain question answering",
+        "type": "direct",
+        "ranked": [
+          "dpr",
+          "natural-questions",
+          "milvus",
+          "adaptive-rag",
+          "rerank-cross"
+        ],
+        "relevant": [
+          "dpr",
+          "natural-questions"
+        ]
+      },
+      {
+        "id": "e03",
+        "query": "graph based retrieval augmented generation with communities",
+        "type": "graph",
+        "ranked": [
+          "lightrag",
+          "rag-recsys-survey",
+          "llm-recsys-survey",
+          "rag-survey",
+          "selfrag"
+        ],
+        "relevant": [
+          "graphrag",
+          "lightrag"
+        ]
+      },
+      {
+        "id": "e04",
+        "query": "vector databases and approximate nearest neighbor indexes",
+        "type": "topic",
+        "ranked": [
+          "vector-db-survey",
+          "ann-survey",
+          "lightrag",
+          "milvus",
+          "memorybank"
+        ],
+        "relevant": [
+          "vector-db-survey",
+          "ann-survey"
+        ]
+      },
+      {
+        "id": "e05",
+        "query": "survey of knowledge graph embeddings for link prediction",
+        "type": "direct",
+        "ranked": [
+          "kg-embeddings",
+          "rgnn",
+          "kg-rag",
+          "lightrag",
+          "graphrag"
+        ],
+        "relevant": [
+          "kg-embeddings"
+        ]
+      },
+      {
+        "id": "e06",
+        "query": "contrastive learning of sentence embeddings",
+        "type": "direct",
+        "ranked": [
+          "simcse",
+          "transe",
+          "vector-db-survey",
+          "hyde",
+          "toolformer"
+        ],
+        "relevant": [
+          "simcse"
+        ]
+      },
+      {
+        "id": "e07",
+        "query": "language model agents with long term memory and tool use",
+        "type": "topic",
+        "ranked": [
+          "memorybank",
+          "toolformer",
+          "rag-survey",
+          "react",
+          "rag-recsys-survey"
+        ],
+        "relevant": [
+          "memorybank",
+          "toolformer"
+        ]
+      },
+      {
+        "id": "e08",
+        "query": "benchmarks for evaluating llms and retrieval augmented generation",
+        "type": "topic",
+        "ranked": [
+          "llm-recsys-survey",
+          "rag-recsys-survey",
+          "rag-eval",
+          "rag-survey",
+          "natural-questions"
+        ],
+        "relevant": [
+          "rag-eval",
+          "mmlu",
+          "natural-questions"
+        ]
+      },
+      {
+        "id": "e09",
+        "query": "how do knowledge graphs connect to retrieval augmentation pipelines",
+        "type": "cross",
+        "ranked": [
+          "lightrag",
+          "rag-recsys-survey",
+          "kg-rag",
+          "truthfulqa",
+          "rgnn"
+        ],
+        "relevant": [
+          "graphrag",
+          "kg-embeddings",
+          "lightrag"
+        ]
+      },
+      {
+        "id": "e10",
+        "query": "large language models for conversational product recommendations",
+        "type": "graph",
+        "ranked": [
+          "llm-recsys-survey",
+          "rag-recsys-survey",
+          "toolformer",
+          "rag-eval",
+          "rgnn"
+        ],
+        "relevant": [
+          "rag-recsys-survey"
+        ]
+      },
+      {
+        "id": "e11",
+        "query": "natural questions benchmark for question answering research",
+        "type": "direct",
+        "ranked": [
+          "dpr",
+          "natural-questions",
+          "rag-fusion",
+          "rag-eval",
+          "rag-survey"
+        ],
+        "relevant": [
+          "natural-questions",
+          "dpr"
+        ]
+      },
+      {
+        "id": "e12",
+        "query": "which papers cover embedding methods in nlp",
+        "type": "topic",
+        "ranked": [
+          "simcse",
+          "transe",
+          "ann-survey",
+          "hyde",
+          "vector-db-survey"
+        ],
+        "relevant": [
+          "simcse",
+          "kg-embeddings"
+        ]
+      },
+      {
+        "id": "e13",
+        "query": "teaching language models to call external tools like calculators",
+        "type": "direct",
+        "ranked": [
+          "toolformer",
+          "llm-recsys-survey",
+          "rag-survey",
+          "react",
+          "kg-rag"
+        ],
+        "relevant": [
+          "toolformer"
+        ]
+      },
+      {
+        "id": "e14",
+        "query": "memory augmented conversational agents that remember sessions",
+        "type": "graph",
+        "ranked": [
+          "memorybank",
+          "reflexion",
+          "truthfulqa",
+          "llm-recsys-survey",
+          "rag-survey"
+        ],
+        "relevant": [
+          "memorybank"
+        ]
+      },
+      {
+        "id": "e15",
+        "query": "rag evaluation robustness to noisy retrieved contexts",
+        "type": "graph",
+        "ranked": [
+          "rag-eval",
+          "selfrag",
+          "rag-recsys-survey",
+          "lightrag",
+          "rag-survey"
+        ],
+        "relevant": [
+          "rag-eval",
+          "rag-survey"
+        ]
+      },
+      {
+        "id": "e16",
+        "query": "hnsw graph index for fast approximate similarity search",
+        "type": "graph",
+        "ranked": [
+          "ann-survey",
+          "simcse",
+          "lightrag",
+          "vector-db-survey",
+          "memorybank"
+        ],
+        "relevant": [
+          "ann-survey",
+          "vector-db-survey"
+        ]
+      },
+      {
+        "id": "e17",
+        "query": "retrieval indexes spanning both graphs and vector stores",
+        "type": "cross",
+        "ranked": [
+          "lightrag",
+          "ann-survey",
+          "vector-db-survey",
+          "bm25-survey",
+          "selfrag"
+        ],
+        "relevant": [
+          "lightrag",
+          "ann-survey",
+          "vector-db-survey"
+        ]
+      },
+      {
+        "id": "e18",
+        "query": "late interaction token level passage search with contextual embeddings",
+        "type": "direct",
+        "ranked": [
+          "colbert",
+          "simcse",
+          "milvus",
+          "transe",
+          "lightrag"
+        ],
+        "relevant": [
+          "colbert"
+        ]
+      },
+      {
+        "id": "e19",
+        "query": "grounding large language models in knowledge graphs for question answering",
+        "type": "cross",
+        "ranked": [
+          "kg-rag",
+          "llm-recsys-survey",
+          "rag-survey",
+          "rag-recsys-survey",
+          "dpr"
+        ],
+        "relevant": [
+          "kg-rag",
+          "graphrag",
+          "kg-embeddings"
+        ]
+      },
+      {
+        "id": "e20",
+        "query": "agents that interleave reasoning traces with tool actions and reflect on failures",
+        "type": "topic",
+        "ranked": [
+          "react",
+          "lightrag",
+          "kg-embeddings",
+          "reflexion",
+          "selfrag"
+        ],
+        "relevant": [
+          "react",
+          "reflexion",
+          "toolformer"
+        ]
+      },
+      {
+        "id": "e21",
+        "query": "automated faithfulness and relevance metrics for rag pipelines",
+        "type": "graph",
+        "ranked": [
+          "ragas",
+          "lightrag",
+          "rag-recsys-survey",
+          "rag-eval",
+          "natural-questions"
+        ],
+        "relevant": [
+          "ragas",
+          "rag-eval"
+        ]
+      },
+      {
+        "id": "e22",
+        "query": "generative recommendation with large language models",
+        "type": "direct",
+        "ranked": [
+          "llm-recsys-survey",
+          "rag-recsys-survey",
+          "toolformer",
+          "rag-survey",
+          "rag-fusion"
+        ],
+        "relevant": [
+          "llm-recsys-survey",
+          "rag-recsys-survey"
+        ]
+      }
+    ]
+  },
+  "wave-nowormhole": {
+    "metrics": {
+      "recallAt5": 0.8484848484848485,
+      "mrr": 0.9242424242424242,
+      "ndcgAt5": 0.8206391371223533,
+      "diversity": 0.8082287157287158
+    },
+    "cases": [
+      {
+        "id": "e01",
+        "query": "retrieval augmented generation survey for knowledge intensive tasks",
+        "type": "topic",
+        "ranked": [
+          "rag-survey",
+          "rag-recsys-survey",
+          "llm-recsys-survey",
+          "kg-rag",
+          "mmlu"
+        ],
+        "relevant": [
+          "rag-survey",
+          "rag-recsys-survey",
+          "rag-eval"
+        ]
+      },
+      {
+        "id": "e02",
+        "query": "dense passage retrieval for open domain question answering",
+        "type": "direct",
+        "ranked": [
+          "dpr",
+          "natural-questions",
+          "adaptive-rag",
+          "rerank-cross",
+          "rag-survey"
+        ],
+        "relevant": [
+          "dpr",
+          "natural-questions"
+        ]
+      },
+      {
+        "id": "e03",
+        "query": "graph based retrieval augmented generation with communities",
+        "type": "graph",
+        "ranked": [
+          "rag-recsys-survey",
+          "lightrag",
+          "llm-recsys-survey",
+          "rag-survey",
+          "selfrag"
+        ],
+        "relevant": [
+          "graphrag",
+          "lightrag"
+        ]
+      },
+      {
+        "id": "e04",
+        "query": "vector databases and approximate nearest neighbor indexes",
+        "type": "topic",
+        "ranked": [
+          "vector-db-survey",
+          "ann-survey",
+          "lightrag",
+          "memorybank",
+          "milvus"
+        ],
+        "relevant": [
+          "vector-db-survey",
+          "ann-survey"
+        ]
+      },
+      {
+        "id": "e05",
+        "query": "survey of knowledge graph embeddings for link prediction",
+        "type": "direct",
+        "ranked": [
+          "kg-embeddings",
+          "kg-rag",
+          "rgnn",
+          "graphrag",
+          "transe"
+        ],
+        "relevant": [
+          "kg-embeddings"
+        ]
+      },
+      {
+        "id": "e06",
+        "query": "contrastive learning of sentence embeddings",
+        "type": "direct",
+        "ranked": [
+          "simcse",
+          "transe",
+          "vector-db-survey",
+          "hyde",
+          "colbert"
+        ],
+        "relevant": [
+          "simcse"
+        ]
+      },
+      {
+        "id": "e07",
+        "query": "language model agents with long term memory and tool use",
+        "type": "topic",
+        "ranked": [
+          "memorybank",
+          "toolformer",
+          "rag-survey",
+          "react",
+          "rag-recsys-survey"
+        ],
+        "relevant": [
+          "memorybank",
+          "toolformer"
+        ]
+      },
+      {
+        "id": "e08",
+        "query": "benchmarks for evaluating llms and retrieval augmented generation",
+        "type": "topic",
+        "ranked": [
+          "llm-recsys-survey",
+          "rag-recsys-survey",
+          "rag-eval",
+          "rag-survey",
+          "natural-questions"
+        ],
+        "relevant": [
+          "rag-eval",
+          "mmlu",
+          "natural-questions"
+        ]
+      },
+      {
+        "id": "e09",
+        "query": "how do knowledge graphs connect to retrieval augmentation pipelines",
+        "type": "cross",
+        "ranked": [
+          "lightrag",
+          "rag-recsys-survey",
+          "kg-rag",
+          "truthfulqa",
+          "selfrag"
+        ],
+        "relevant": [
+          "graphrag",
+          "kg-embeddings",
+          "lightrag"
+        ]
+      },
+      {
+        "id": "e10",
+        "query": "large language models for conversational product recommendations",
+        "type": "graph",
+        "ranked": [
+          "llm-recsys-survey",
+          "rag-recsys-survey",
+          "toolformer",
+          "rag-eval",
+          "rgnn"
+        ],
+        "relevant": [
+          "rag-recsys-survey"
+        ]
+      },
+      {
+        "id": "e11",
+        "query": "natural questions benchmark for question answering research",
+        "type": "direct",
+        "ranked": [
+          "dpr",
+          "natural-questions",
+          "rag-fusion",
+          "kg-rag",
+          "rag-survey"
+        ],
+        "relevant": [
+          "natural-questions",
+          "dpr"
+        ]
+      },
+      {
+        "id": "e12",
+        "query": "which papers cover embedding methods in nlp",
+        "type": "topic",
+        "ranked": [
+          "simcse",
+          "transe",
+          "ann-survey",
+          "hyde",
+          "vector-db-survey"
+        ],
+        "relevant": [
+          "simcse",
+          "kg-embeddings"
+        ]
+      },
+      {
+        "id": "e13",
+        "query": "teaching language models to call external tools like calculators",
+        "type": "direct",
+        "ranked": [
+          "toolformer",
+          "llm-recsys-survey",
+          "rag-survey",
+          "kg-rag",
+          "react"
+        ],
+        "relevant": [
+          "toolformer"
+        ]
+      },
+      {
+        "id": "e14",
+        "query": "memory augmented conversational agents that remember sessions",
+        "type": "graph",
+        "ranked": [
+          "memorybank",
+          "reflexion",
+          "truthfulqa",
+          "llm-recsys-survey",
+          "rag-survey"
+        ],
+        "relevant": [
+          "memorybank"
+        ]
+      },
+      {
+        "id": "e15",
+        "query": "rag evaluation robustness to noisy retrieved contexts",
+        "type": "graph",
+        "ranked": [
+          "rag-eval",
+          "selfrag",
+          "rag-recsys-survey",
+          "rag-survey",
+          "lightrag"
+        ],
+        "relevant": [
+          "rag-eval",
+          "rag-survey"
+        ]
+      },
+      {
+        "id": "e16",
+        "query": "hnsw graph index for fast approximate similarity search",
+        "type": "graph",
+        "ranked": [
+          "ann-survey",
+          "simcse",
+          "lightrag",
+          "vector-db-survey",
+          "memorybank"
+        ],
+        "relevant": [
+          "ann-survey",
+          "vector-db-survey"
+        ]
+      },
+      {
+        "id": "e17",
+        "query": "retrieval indexes spanning both graphs and vector stores",
+        "type": "cross",
+        "ranked": [
+          "lightrag",
+          "ann-survey",
+          "vector-db-survey",
+          "selfrag",
+          "bm25-survey"
+        ],
+        "relevant": [
+          "lightrag",
+          "ann-survey",
+          "vector-db-survey"
+        ]
+      },
+      {
+        "id": "e18",
+        "query": "late interaction token level passage search with contextual embeddings",
+        "type": "direct",
+        "ranked": [
+          "colbert",
+          "simcse",
+          "transe",
+          "selfrag",
+          "kg-embeddings"
+        ],
+        "relevant": [
+          "colbert"
+        ]
+      },
+      {
+        "id": "e19",
+        "query": "grounding large language models in knowledge graphs for question answering",
+        "type": "cross",
+        "ranked": [
+          "kg-rag",
+          "llm-recsys-survey",
+          "rag-survey",
+          "rag-recsys-survey",
+          "dpr"
+        ],
+        "relevant": [
+          "kg-rag",
+          "graphrag",
+          "kg-embeddings"
+        ]
+      },
+      {
+        "id": "e20",
+        "query": "agents that interleave reasoning traces with tool actions and reflect on failures",
+        "type": "topic",
+        "ranked": [
+          "react",
+          "lightrag",
+          "kg-embeddings",
+          "reflexion",
+          "selfrag"
+        ],
+        "relevant": [
+          "react",
+          "reflexion",
+          "toolformer"
+        ]
+      },
+      {
+        "id": "e21",
+        "query": "automated faithfulness and relevance metrics for rag pipelines",
+        "type": "graph",
+        "ranked": [
+          "ragas",
+          "lightrag",
+          "rag-recsys-survey",
+          "rag-eval",
+          "natural-questions"
+        ],
+        "relevant": [
+          "ragas",
+          "rag-eval"
+        ]
+      },
+      {
+        "id": "e22",
+        "query": "generative recommendation with large language models",
+        "type": "direct",
+        "ranked": [
+          "llm-recsys-survey",
+          "rag-recsys-survey",
+          "toolformer",
+          "rag-survey",
+          "rag-fusion"
+        ],
+        "relevant": [
+          "llm-recsys-survey",
+          "rag-recsys-survey"
+        ]
+      }
+    ]
+  },
+  "wave-nodamper": {
+    "metrics": {
+      "recallAt5": 0.8106060606060606,
+      "mrr": 0.9469696969696969,
+      "ndcgAt5": 0.8126023164055858,
+      "diversity": 0.8002831890331891
+    },
+    "cases": [
+      {
+        "id": "e01",
+        "query": "retrieval augmented generation survey for knowledge intensive tasks",
+        "type": "topic",
+        "ranked": [
+          "rag-survey",
+          "rag-recsys-survey",
+          "llm-recsys-survey",
+          "kg-rag",
+          "mmlu"
+        ],
+        "relevant": [
+          "rag-survey",
+          "rag-recsys-survey",
+          "rag-eval"
+        ]
+      },
+      {
+        "id": "e02",
+        "query": "dense passage retrieval for open domain question answering",
+        "type": "direct",
+        "ranked": [
+          "dpr",
+          "natural-questions",
+          "adaptive-rag",
+          "rag-recsys-survey",
+          "rerank-cross"
+        ],
+        "relevant": [
+          "dpr",
+          "natural-questions"
+        ]
+      },
+      {
+        "id": "e03",
+        "query": "graph based retrieval augmented generation with communities",
+        "type": "graph",
+        "ranked": [
+          "lightrag",
+          "rag-recsys-survey",
+          "llm-recsys-survey",
+          "selfrag",
+          "rag-survey"
+        ],
+        "relevant": [
+          "graphrag",
+          "lightrag"
+        ]
+      },
+      {
+        "id": "e04",
+        "query": "vector databases and approximate nearest neighbor indexes",
+        "type": "topic",
+        "ranked": [
+          "vector-db-survey",
+          "ann-survey",
+          "lightrag",
+          "milvus",
+          "memorybank"
+        ],
+        "relevant": [
+          "vector-db-survey",
+          "ann-survey"
+        ]
+      },
+      {
+        "id": "e05",
+        "query": "survey of knowledge graph embeddings for link prediction",
+        "type": "direct",
+        "ranked": [
+          "kg-embeddings",
+          "rgnn",
+          "transe",
+          "kg-rag",
+          "graphrag"
+        ],
+        "relevant": [
+          "kg-embeddings"
+        ]
+      },
+      {
+        "id": "e06",
+        "query": "contrastive learning of sentence embeddings",
+        "type": "direct",
+        "ranked": [
+          "simcse",
+          "transe",
+          "vector-db-survey",
+          "hyde",
+          "colbert"
+        ],
+        "relevant": [
+          "simcse"
+        ]
+      },
+      {
+        "id": "e07",
+        "query": "language model agents with long term memory and tool use",
+        "type": "topic",
+        "ranked": [
+          "memorybank",
+          "toolformer",
+          "react",
+          "rag-survey",
+          "rag-recsys-survey"
+        ],
+        "relevant": [
+          "memorybank",
+          "toolformer"
+        ]
+      },
+      {
+        "id": "e08",
+        "query": "benchmarks for evaluating llms and retrieval augmented generation",
+        "type": "topic",
+        "ranked": [
+          "llm-recsys-survey",
+          "rag-recsys-survey",
+          "rag-eval",
+          "rag-survey",
+          "lightrag"
+        ],
+        "relevant": [
+          "rag-eval",
+          "mmlu",
+          "natural-questions"
+        ]
+      },
+      {
+        "id": "e09",
+        "query": "how do knowledge graphs connect to retrieval augmentation pipelines",
+        "type": "cross",
+        "ranked": [
+          "lightrag",
+          "rag-recsys-survey",
+          "kg-rag",
+          "truthfulqa",
+          "selfrag"
+        ],
+        "relevant": [
+          "graphrag",
+          "kg-embeddings",
+          "lightrag"
+        ]
+      },
+      {
+        "id": "e10",
+        "query": "large language models for conversational product recommendations",
+        "type": "graph",
+        "ranked": [
+          "llm-recsys-survey",
+          "rag-recsys-survey",
+          "toolformer",
+          "rag-eval",
+          "rag-survey"
+        ],
+        "relevant": [
+          "rag-recsys-survey"
+        ]
+      },
+      {
+        "id": "e11",
+        "query": "natural questions benchmark for question answering research",
+        "type": "direct",
+        "ranked": [
+          "dpr",
+          "natural-questions",
+          "rag-fusion",
+          "rag-survey",
+          "rag-eval"
+        ],
+        "relevant": [
+          "natural-questions",
+          "dpr"
+        ]
+      },
+      {
+        "id": "e12",
+        "query": "which papers cover embedding methods in nlp",
+        "type": "topic",
+        "ranked": [
+          "simcse",
+          "transe",
+          "ann-survey",
+          "vector-db-survey",
+          "hyde"
+        ],
+        "relevant": [
+          "simcse",
+          "kg-embeddings"
+        ]
+      },
+      {
+        "id": "e13",
+        "query": "teaching language models to call external tools like calculators",
+        "type": "direct",
+        "ranked": [
+          "toolformer",
+          "llm-recsys-survey",
+          "react",
+          "rag-survey",
+          "kg-rag"
+        ],
+        "relevant": [
+          "toolformer"
+        ]
+      },
+      {
+        "id": "e14",
+        "query": "memory augmented conversational agents that remember sessions",
+        "type": "graph",
+        "ranked": [
+          "memorybank",
+          "reflexion",
+          "truthfulqa",
+          "llm-recsys-survey",
+          "rag-recsys-survey"
+        ],
+        "relevant": [
+          "memorybank"
+        ]
+      },
+      {
+        "id": "e15",
+        "query": "rag evaluation robustness to noisy retrieved contexts",
+        "type": "graph",
+        "ranked": [
+          "rag-eval",
+          "selfrag",
+          "rag-recsys-survey",
+          "lightrag",
+          "ragas"
+        ],
+        "relevant": [
+          "rag-eval",
+          "rag-survey"
+        ]
+      },
+      {
+        "id": "e16",
+        "query": "hnsw graph index for fast approximate similarity search",
+        "type": "graph",
+        "ranked": [
+          "ann-survey",
+          "lightrag",
+          "simcse",
+          "vector-db-survey",
+          "memorybank"
+        ],
+        "relevant": [
+          "ann-survey",
+          "vector-db-survey"
+        ]
+      },
+      {
+        "id": "e17",
+        "query": "retrieval indexes spanning both graphs and vector stores",
+        "type": "cross",
+        "ranked": [
+          "lightrag",
+          "ann-survey",
+          "vector-db-survey",
+          "bm25-survey",
+          "selfrag"
+        ],
+        "relevant": [
+          "lightrag",
+          "ann-survey",
+          "vector-db-survey"
+        ]
+      },
+      {
+        "id": "e18",
+        "query": "late interaction token level passage search with contextual embeddings",
+        "type": "direct",
+        "ranked": [
+          "colbert",
+          "simcse",
+          "transe",
+          "lightrag",
+          "milvus"
+        ],
+        "relevant": [
+          "colbert"
+        ]
+      },
+      {
+        "id": "e19",
+        "query": "grounding large language models in knowledge graphs for question answering",
+        "type": "cross",
+        "ranked": [
+          "kg-rag",
+          "rag-recsys-survey",
+          "llm-recsys-survey",
+          "rag-survey",
+          "dpr"
+        ],
+        "relevant": [
+          "kg-rag",
+          "graphrag",
+          "kg-embeddings"
+        ]
+      },
+      {
+        "id": "e20",
+        "query": "agents that interleave reasoning traces with tool actions and reflect on failures",
+        "type": "topic",
+        "ranked": [
+          "react",
+          "lightrag",
+          "kg-embeddings",
+          "reflexion",
+          "selfrag"
+        ],
+        "relevant": [
+          "react",
+          "reflexion",
+          "toolformer"
+        ]
+      },
+      {
+        "id": "e21",
+        "query": "automated faithfulness and relevance metrics for rag pipelines",
+        "type": "graph",
+        "ranked": [
+          "ragas",
+          "lightrag",
+          "rag-eval",
+          "rag-recsys-survey",
+          "kg-rag"
+        ],
+        "relevant": [
+          "ragas",
+          "rag-eval"
+        ]
+      },
+      {
+        "id": "e22",
+        "query": "generative recommendation with large language models",
+        "type": "direct",
+        "ranked": [
+          "llm-recsys-survey",
+          "rag-recsys-survey",
+          "toolformer",
+          "rag-survey",
+          "selfrag"
+        ],
+        "relevant": [
+          "llm-recsys-survey",
+          "rag-recsys-survey"
+        ]
+      }
+    ]
+  },
+  "wave-noinnovation": {
+    "metrics": {
+      "recallAt5": 0.8257575757575758,
+      "mrr": 0.8939393939393938,
+      "ndcgAt5": 0.7893428022111789,
+      "diversity": 0.8353084415584415
+    },
+    "cases": [
+      {
+        "id": "e01",
+        "query": "retrieval augmented generation survey for knowledge intensive tasks",
+        "type": "topic",
+        "ranked": [
+          "rag-survey",
+          "rag-recsys-survey",
+          "llm-recsys-survey",
+          "mmlu",
+          "kg-rag"
+        ],
+        "relevant": [
+          "rag-survey",
+          "rag-recsys-survey",
+          "rag-eval"
+        ]
+      },
+      {
+        "id": "e02",
+        "query": "dense passage retrieval for open domain question answering",
+        "type": "direct",
+        "ranked": [
+          "dpr",
+          "natural-questions",
+          "rerank-cross",
+          "adaptive-rag",
+          "rag-eval"
+        ],
+        "relevant": [
+          "dpr",
+          "natural-questions"
+        ]
+      },
+      {
+        "id": "e03",
+        "query": "graph based retrieval augmented generation with communities",
+        "type": "graph",
+        "ranked": [
+          "lightrag",
+          "rag-recsys-survey",
+          "rag-fusion",
+          "selfrag",
+          "llm-recsys-survey"
+        ],
+        "relevant": [
+          "graphrag",
+          "lightrag"
+        ]
+      },
+      {
+        "id": "e04",
+        "query": "vector databases and approximate nearest neighbor indexes",
+        "type": "topic",
+        "ranked": [
+          "vector-db-survey",
+          "ann-survey",
+          "lightrag",
+          "milvus",
+          "react"
+        ],
+        "relevant": [
+          "vector-db-survey",
+          "ann-survey"
+        ]
+      },
+      {
+        "id": "e05",
+        "query": "survey of knowledge graph embeddings for link prediction",
+        "type": "direct",
+        "ranked": [
+          "kg-embeddings",
+          "rgnn",
+          "transe",
+          "kg-rag",
+          "rag-recsys-survey"
+        ],
+        "relevant": [
+          "kg-embeddings"
+        ]
+      },
+      {
+        "id": "e06",
+        "query": "contrastive learning of sentence embeddings",
+        "type": "direct",
+        "ranked": [
+          "simcse",
+          "transe",
+          "vector-db-survey",
+          "hyde",
+          "toolformer"
+        ],
+        "relevant": [
+          "simcse"
+        ]
+      },
+      {
+        "id": "e07",
+        "query": "language model agents with long term memory and tool use",
+        "type": "topic",
+        "ranked": [
+          "memorybank",
+          "react",
+          "toolformer",
+          "reflexion",
+          "rag-survey"
+        ],
+        "relevant": [
+          "memorybank",
+          "toolformer"
+        ]
+      },
+      {
+        "id": "e08",
+        "query": "benchmarks for evaluating llms and retrieval augmented generation",
+        "type": "topic",
+        "ranked": [
+          "rag-recsys-survey",
+          "rag-eval",
+          "llm-recsys-survey",
+          "lightrag",
+          "natural-questions"
+        ],
+        "relevant": [
+          "rag-eval",
+          "mmlu",
+          "natural-questions"
+        ]
+      },
+      {
+        "id": "e09",
+        "query": "how do knowledge graphs connect to retrieval augmentation pipelines",
+        "type": "cross",
+        "ranked": [
+          "truthfulqa",
+          "rgnn",
+          "lightrag",
+          "rag-recsys-survey",
+          "kg-rag"
+        ],
+        "relevant": [
+          "graphrag",
+          "kg-embeddings",
+          "lightrag"
+        ]
+      },
+      {
+        "id": "e10",
+        "query": "large language models for conversational product recommendations",
+        "type": "graph",
+        "ranked": [
+          "llm-recsys-survey",
+          "toolformer",
+          "rag-recsys-survey",
+          "rgnn",
+          "rag-eval"
+        ],
+        "relevant": [
+          "rag-recsys-survey"
+        ]
+      },
+      {
+        "id": "e11",
+        "query": "natural questions benchmark for question answering research",
+        "type": "direct",
+        "ranked": [
+          "natural-questions",
+          "dpr",
+          "rag-fusion",
+          "rag-eval",
+          "rgnn"
+        ],
+        "relevant": [
+          "natural-questions",
+          "dpr"
+        ]
+      },
+      {
+        "id": "e12",
+        "query": "which papers cover embedding methods in nlp",
+        "type": "topic",
+        "ranked": [
+          "transe",
+          "simcse",
+          "ann-survey",
+          "hyde",
+          "kg-embeddings"
+        ],
+        "relevant": [
+          "simcse",
+          "kg-embeddings"
+        ]
+      },
+      {
+        "id": "e13",
+        "query": "teaching language models to call external tools like calculators",
+        "type": "direct",
+        "ranked": [
+          "toolformer",
+          "llm-recsys-survey",
+          "react",
+          "kg-rag",
+          "rag-eval"
+        ],
+        "relevant": [
+          "toolformer"
+        ]
+      },
+      {
+        "id": "e14",
+        "query": "memory augmented conversational agents that remember sessions",
+        "type": "graph",
+        "ranked": [
+          "memorybank",
+          "reflexion",
+          "truthfulqa",
+          "llm-recsys-survey",
+          "rgnn"
+        ],
+        "relevant": [
+          "memorybank"
+        ]
+      },
+      {
+        "id": "e15",
+        "query": "rag evaluation robustness to noisy retrieved contexts",
+        "type": "graph",
+        "ranked": [
+          "rag-eval",
+          "selfrag",
+          "ragas",
+          "rag-recsys-survey",
+          "adaptive-rag"
+        ],
+        "relevant": [
+          "rag-eval",
+          "rag-survey"
+        ]
+      },
+      {
+        "id": "e16",
+        "query": "hnsw graph index for fast approximate similarity search",
+        "type": "graph",
+        "ranked": [
+          "ann-survey",
+          "transe",
+          "simcse",
+          "lightrag",
+          "vector-db-survey"
+        ],
+        "relevant": [
+          "ann-survey",
+          "vector-db-survey"
+        ]
+      },
+      {
+        "id": "e17",
+        "query": "retrieval indexes spanning both graphs and vector stores",
+        "type": "cross",
+        "ranked": [
+          "ann-survey",
+          "lightrag",
+          "vector-db-survey",
+          "bm25-survey",
+          "rgnn"
+        ],
+        "relevant": [
+          "lightrag",
+          "ann-survey",
+          "vector-db-survey"
+        ]
+      },
+      {
+        "id": "e18",
+        "query": "late interaction token level passage search with contextual embeddings",
+        "type": "direct",
+        "ranked": [
+          "colbert",
+          "transe",
+          "simcse",
+          "kg-embeddings",
+          "selfrag"
+        ],
+        "relevant": [
+          "colbert"
+        ]
+      },
+      {
+        "id": "e19",
+        "query": "grounding large language models in knowledge graphs for question answering",
+        "type": "cross",
+        "ranked": [
+          "kg-rag",
+          "llm-recsys-survey",
+          "react",
+          "rgnn",
+          "dpr"
+        ],
+        "relevant": [
+          "kg-rag",
+          "graphrag",
+          "kg-embeddings"
+        ]
+      },
+      {
+        "id": "e20",
+        "query": "agents that interleave reasoning traces with tool actions and reflect on failures",
+        "type": "topic",
+        "ranked": [
+          "react",
+          "reflexion",
+          "kg-embeddings",
+          "bm25-survey",
+          "lightrag"
+        ],
+        "relevant": [
+          "react",
+          "reflexion",
+          "toolformer"
+        ]
+      },
+      {
+        "id": "e21",
+        "query": "automated faithfulness and relevance metrics for rag pipelines",
+        "type": "graph",
+        "ranked": [
+          "ragas",
+          "lightrag",
+          "rag-recsys-survey",
+          "natural-questions",
+          "kg-rag"
+        ],
+        "relevant": [
+          "ragas",
+          "rag-eval"
+        ]
+      },
+      {
+        "id": "e22",
+        "query": "generative recommendation with large language models",
+        "type": "direct",
+        "ranked": [
+          "llm-recsys-survey",
+          "toolformer",
+          "rag-recsys-survey",
+          "rgnn",
+          "rag-eval"
+        ],
+        "relevant": [
+          "llm-recsys-survey",
+          "rag-recsys-survey"
+        ]
+      }
+    ]
+  },
+  "wave-noanchor": {
+    "metrics": {
+      "recallAt5": 0.8333333333333333,
+      "mrr": 0.8787878787878788,
+      "ndcgAt5": 0.783295528253894,
+      "diversity": 0.8323304473304473
+    },
+    "cases": [
+      {
+        "id": "e01",
+        "query": "retrieval augmented generation survey for knowledge intensive tasks",
+        "type": "topic",
+        "ranked": [
+          "rag-survey",
+          "rag-recsys-survey",
+          "llm-recsys-survey",
+          "kg-rag",
+          "mmlu"
+        ],
+        "relevant": [
+          "rag-survey",
+          "rag-recsys-survey",
+          "rag-eval"
+        ]
+      },
+      {
+        "id": "e02",
+        "query": "dense passage retrieval for open domain question answering",
+        "type": "direct",
+        "ranked": [
+          "dpr",
+          "milvus",
+          "selfrag",
+          "natural-questions",
+          "rerank-cross"
+        ],
+        "relevant": [
+          "dpr",
+          "natural-questions"
+        ]
+      },
+      {
+        "id": "e03",
+        "query": "graph based retrieval augmented generation with communities",
+        "type": "graph",
+        "ranked": [
+          "llm-recsys-survey",
+          "lightrag",
+          "rag-recsys-survey",
+          "selfrag",
+          "rag-survey"
+        ],
+        "relevant": [
+          "graphrag",
+          "lightrag"
+        ]
+      },
+      {
+        "id": "e04",
+        "query": "vector databases and approximate nearest neighbor indexes",
+        "type": "topic",
+        "ranked": [
+          "vector-db-survey",
+          "ann-survey",
+          "lightrag",
+          "memorybank",
+          "milvus"
+        ],
+        "relevant": [
+          "vector-db-survey",
+          "ann-survey"
+        ]
+      },
+      {
+        "id": "e05",
+        "query": "survey of knowledge graph embeddings for link prediction",
+        "type": "direct",
+        "ranked": [
+          "kg-embeddings",
+          "rgnn",
+          "lightrag",
+          "kg-rag",
+          "graphrag"
+        ],
+        "relevant": [
+          "kg-embeddings"
+        ]
+      },
+      {
+        "id": "e06",
+        "query": "contrastive learning of sentence embeddings",
+        "type": "direct",
+        "ranked": [
+          "simcse",
+          "transe",
+          "hyde",
+          "vector-db-survey",
+          "toolformer"
+        ],
+        "relevant": [
+          "simcse"
+        ]
+      },
+      {
+        "id": "e07",
+        "query": "language model agents with long term memory and tool use",
+        "type": "topic",
+        "ranked": [
+          "memorybank",
+          "rag-survey",
+          "toolformer",
+          "react",
+          "rag-recsys-survey"
+        ],
+        "relevant": [
+          "memorybank",
+          "toolformer"
+        ]
+      },
+      {
+        "id": "e08",
+        "query": "benchmarks for evaluating llms and retrieval augmented generation",
+        "type": "topic",
+        "ranked": [
+          "llm-recsys-survey",
+          "rag-recsys-survey",
+          "rag-eval",
+          "natural-questions",
+          "rag-survey"
+        ],
+        "relevant": [
+          "rag-eval",
+          "mmlu",
+          "natural-questions"
+        ]
+      },
+      {
+        "id": "e09",
+        "query": "how do knowledge graphs connect to retrieval augmentation pipelines",
+        "type": "cross",
+        "ranked": [
+          "lightrag",
+          "rag-recsys-survey",
+          "kg-rag",
+          "rgnn",
+          "truthfulqa"
+        ],
+        "relevant": [
+          "graphrag",
+          "kg-embeddings",
+          "lightrag"
+        ]
+      },
+      {
+        "id": "e10",
+        "query": "large language models for conversational product recommendations",
+        "type": "graph",
+        "ranked": [
+          "llm-recsys-survey",
+          "rag-recsys-survey",
+          "rgnn",
+          "toolformer",
+          "truthfulqa"
+        ],
+        "relevant": [
+          "rag-recsys-survey"
+        ]
+      },
+      {
+        "id": "e11",
+        "query": "natural questions benchmark for question answering research",
+        "type": "direct",
+        "ranked": [
+          "dpr",
+          "natural-questions",
+          "rag-fusion",
+          "graphrag",
+          "rag-eval"
+        ],
+        "relevant": [
+          "natural-questions",
+          "dpr"
+        ]
+      },
+      {
+        "id": "e12",
+        "query": "which papers cover embedding methods in nlp",
+        "type": "topic",
+        "ranked": [
+          "transe",
+          "simcse",
+          "ann-survey",
+          "hyde",
+          "rag-recsys-survey"
+        ],
+        "relevant": [
+          "simcse",
+          "kg-embeddings"
+        ]
+      },
+      {
+        "id": "e13",
+        "query": "teaching language models to call external tools like calculators",
+        "type": "direct",
+        "ranked": [
+          "toolformer",
+          "llm-recsys-survey",
+          "rag-survey",
+          "kg-rag",
+          "react"
+        ],
+        "relevant": [
+          "toolformer"
+        ]
+      },
+      {
+        "id": "e14",
+        "query": "memory augmented conversational agents that remember sessions",
+        "type": "graph",
+        "ranked": [
+          "memorybank",
+          "truthfulqa",
+          "llm-recsys-survey",
+          "reflexion",
+          "rag-survey"
+        ],
+        "relevant": [
+          "memorybank"
+        ]
+      },
+      {
+        "id": "e15",
+        "query": "rag evaluation robustness to noisy retrieved contexts",
+        "type": "graph",
+        "ranked": [
+          "rag-eval",
+          "selfrag",
+          "rag-recsys-survey",
+          "lightrag",
+          "rag-survey"
+        ],
+        "relevant": [
+          "rag-eval",
+          "rag-survey"
+        ]
+      },
+      {
+        "id": "e16",
+        "query": "hnsw graph index for fast approximate similarity search",
+        "type": "graph",
+        "ranked": [
+          "simcse",
+          "vector-db-survey",
+          "lightrag",
+          "ann-survey",
+          "memorybank"
+        ],
+        "relevant": [
+          "ann-survey",
+          "vector-db-survey"
+        ]
+      },
+      {
+        "id": "e17",
+        "query": "retrieval indexes spanning both graphs and vector stores",
+        "type": "cross",
+        "ranked": [
+          "lightrag",
+          "vector-db-survey",
+          "ann-survey",
+          "kg-rag",
+          "bm25-survey"
+        ],
+        "relevant": [
+          "lightrag",
+          "ann-survey",
+          "vector-db-survey"
+        ]
+      },
+      {
+        "id": "e18",
+        "query": "late interaction token level passage search with contextual embeddings",
+        "type": "direct",
+        "ranked": [
+          "colbert",
+          "simcse",
+          "milvus",
+          "transe",
+          "lightrag"
+        ],
+        "relevant": [
+          "colbert"
+        ]
+      },
+      {
+        "id": "e19",
+        "query": "grounding large language models in knowledge graphs for question answering",
+        "type": "cross",
+        "ranked": [
+          "kg-rag",
+          "rag-recsys-survey",
+          "rag-survey",
+          "dpr",
+          "llm-recsys-survey"
+        ],
+        "relevant": [
+          "kg-rag",
+          "graphrag",
+          "kg-embeddings"
+        ]
+      },
+      {
+        "id": "e20",
+        "query": "agents that interleave reasoning traces with tool actions and reflect on failures",
+        "type": "topic",
+        "ranked": [
+          "react",
+          "lightrag",
+          "kg-embeddings",
+          "selfrag",
+          "rag-recsys-survey"
+        ],
+        "relevant": [
+          "react",
+          "reflexion",
+          "toolformer"
+        ]
+      },
+      {
+        "id": "e21",
+        "query": "automated faithfulness and relevance metrics for rag pipelines",
+        "type": "graph",
+        "ranked": [
+          "ragas",
+          "lightrag",
+          "rag-eval",
+          "natural-questions",
+          "rag-recsys-survey"
+        ],
+        "relevant": [
+          "ragas",
+          "rag-eval"
+        ]
+      },
+      {
+        "id": "e22",
+        "query": "generative recommendation with large language models",
+        "type": "direct",
+        "ranked": [
+          "llm-recsys-survey",
+          "rag-recsys-survey",
+          "toolformer",
+          "rag-survey",
+          "rag-fusion"
+        ],
+        "relevant": [
+          "llm-recsys-survey",
+          "rag-recsys-survey"
+        ]
+      }
+    ]
+  },
+  "wave-bm25": {
+    "metrics": {
+      "recallAt5": 0.8106060606060606,
+      "mrr": 0.9431818181818182,
+      "ndcgAt5": 0.8002186900816223,
+      "diversity": 0.8118560606060607
+    },
+    "cases": [
+      {
+        "id": "e01",
+        "query": "retrieval augmented generation survey for knowledge intensive tasks",
+        "type": "topic",
+        "ranked": [
+          "rag-survey",
+          "rag-recsys-survey",
+          "kg-rag",
+          "llm-recsys-survey",
+          "kg-embeddings"
+        ],
+        "relevant": [
+          "rag-survey",
+          "rag-recsys-survey",
+          "rag-eval"
+        ]
+      },
+      {
+        "id": "e02",
+        "query": "dense passage retrieval for open domain question answering",
+        "type": "direct",
+        "ranked": [
+          "dpr",
+          "natural-questions",
+          "rag-recsys-survey",
+          "rag-survey",
+          "rerank-cross"
+        ],
+        "relevant": [
+          "dpr",
+          "natural-questions"
+        ]
+      },
+      {
+        "id": "e03",
+        "query": "graph based retrieval augmented generation with communities",
+        "type": "graph",
+        "ranked": [
+          "lightrag",
+          "rag-fusion",
+          "rag-recsys-survey",
+          "rag-survey",
+          "kg-rag"
+        ],
+        "relevant": [
+          "graphrag",
+          "lightrag"
+        ]
+      },
+      {
+        "id": "e04",
+        "query": "vector databases and approximate nearest neighbor indexes",
+        "type": "topic",
+        "ranked": [
+          "vector-db-survey",
+          "ann-survey",
+          "milvus",
+          "kg-embeddings",
+          "rag-survey"
+        ],
+        "relevant": [
+          "vector-db-survey",
+          "ann-survey"
+        ]
+      },
+      {
+        "id": "e05",
+        "query": "survey of knowledge graph embeddings for link prediction",
+        "type": "direct",
+        "ranked": [
+          "kg-embeddings",
+          "rgnn",
+          "kg-rag",
+          "transe",
+          "graphrag"
+        ],
+        "relevant": [
+          "kg-embeddings"
+        ]
+      },
+      {
+        "id": "e06",
+        "query": "contrastive learning of sentence embeddings",
+        "type": "direct",
+        "ranked": [
+          "simcse",
+          "transe",
+          "vector-db-survey",
+          "colbert",
+          "kg-embeddings"
+        ],
+        "relevant": [
+          "simcse"
+        ]
+      },
+      {
+        "id": "e07",
+        "query": "language model agents with long term memory and tool use",
+        "type": "topic",
+        "ranked": [
+          "memorybank",
+          "react",
+          "rag-survey",
+          "toolformer",
+          "reflexion"
+        ],
+        "relevant": [
+          "memorybank",
+          "toolformer"
+        ]
+      },
+      {
+        "id": "e08",
+        "query": "benchmarks for evaluating llms and retrieval augmented generation",
+        "type": "topic",
+        "ranked": [
+          "rag-eval",
+          "kg-rag",
+          "rag-recsys-survey",
+          "rag-fusion",
+          "rag-survey"
+        ],
+        "relevant": [
+          "rag-eval",
+          "mmlu",
+          "natural-questions"
+        ]
+      },
+      {
+        "id": "e09",
+        "query": "how do knowledge graphs connect to retrieval augmentation pipelines",
+        "type": "cross",
+        "ranked": [
+          "truthfulqa",
+          "kg-rag",
+          "rgnn",
+          "kg-embeddings",
+          "rag-recsys-survey"
+        ],
+        "relevant": [
+          "graphrag",
+          "kg-embeddings",
+          "lightrag"
+        ]
+      },
+      {
+        "id": "e10",
+        "query": "large language models for conversational product recommendations",
+        "type": "graph",
+        "ranked": [
+          "llm-recsys-survey",
+          "rag-recsys-survey",
+          "toolformer",
+          "memorybank",
+          "rag-eval"
+        ],
+        "relevant": [
+          "rag-recsys-survey"
+        ]
+      },
+      {
+        "id": "e11",
+        "query": "natural questions benchmark for question answering research",
+        "type": "direct",
+        "ranked": [
+          "dpr",
+          "natural-questions",
+          "kg-rag",
+          "rag-survey",
+          "rag-eval"
+        ],
+        "relevant": [
+          "natural-questions",
+          "dpr"
+        ]
+      },
+      {
+        "id": "e12",
+        "query": "which papers cover embedding methods in nlp",
+        "type": "topic",
+        "ranked": [
+          "simcse",
+          "transe",
+          "ann-survey",
+          "hyde",
+          "rag-recsys-survey"
+        ],
+        "relevant": [
+          "simcse",
+          "kg-embeddings"
+        ]
+      },
+      {
+        "id": "e13",
+        "query": "teaching language models to call external tools like calculators",
+        "type": "direct",
+        "ranked": [
+          "toolformer",
+          "llm-recsys-survey",
+          "react",
+          "kg-rag",
+          "rag-survey"
+        ],
+        "relevant": [
+          "toolformer"
+        ]
+      },
+      {
+        "id": "e14",
+        "query": "memory augmented conversational agents that remember sessions",
+        "type": "graph",
+        "ranked": [
+          "memorybank",
+          "llm-recsys-survey",
+          "reflexion",
+          "rag-survey",
+          "ragas"
+        ],
+        "relevant": [
+          "memorybank"
+        ]
+      },
+      {
+        "id": "e15",
+        "query": "rag evaluation robustness to noisy retrieved contexts",
+        "type": "graph",
+        "ranked": [
+          "rag-eval",
+          "selfrag",
+          "rag-recsys-survey",
+          "ragas",
+          "kg-rag"
+        ],
+        "relevant": [
+          "rag-eval",
+          "rag-survey"
+        ]
+      },
+      {
+        "id": "e16",
+        "query": "hnsw graph index for fast approximate similarity search",
+        "type": "graph",
+        "ranked": [
+          "ann-survey",
+          "lightrag",
+          "simcse",
+          "vector-db-survey",
+          "transe"
+        ],
+        "relevant": [
+          "ann-survey",
+          "vector-db-survey"
+        ]
+      },
+      {
+        "id": "e17",
+        "query": "retrieval indexes spanning both graphs and vector stores",
+        "type": "cross",
+        "ranked": [
+          "ann-survey",
+          "vector-db-survey",
+          "lightrag",
+          "kg-rag",
+          "milvus"
+        ],
+        "relevant": [
+          "lightrag",
+          "ann-survey",
+          "vector-db-survey"
+        ]
+      },
+      {
+        "id": "e18",
+        "query": "late interaction token level passage search with contextual embeddings",
+        "type": "direct",
+        "ranked": [
+          "colbert",
+          "simcse",
+          "transe",
+          "dpr",
+          "milvus"
+        ],
+        "relevant": [
+          "colbert"
+        ]
+      },
+      {
+        "id": "e19",
+        "query": "grounding large language models in knowledge graphs for question answering",
+        "type": "cross",
+        "ranked": [
+          "kg-rag",
+          "llm-recsys-survey",
+          "dpr",
+          "rag-survey",
+          "rag-recsys-survey"
+        ],
+        "relevant": [
+          "kg-rag",
+          "graphrag",
+          "kg-embeddings"
+        ]
+      },
+      {
+        "id": "e20",
+        "query": "agents that interleave reasoning traces with tool actions and reflect on failures",
+        "type": "topic",
+        "ranked": [
+          "react",
+          "kg-embeddings",
+          "reflexion",
+          "memorybank",
+          "lightrag"
+        ],
+        "relevant": [
+          "react",
+          "reflexion",
+          "toolformer"
+        ]
+      },
+      {
+        "id": "e21",
+        "query": "automated faithfulness and relevance metrics for rag pipelines",
+        "type": "graph",
+        "ranked": [
+          "ragas",
+          "lightrag",
+          "ann-survey",
+          "natural-questions",
+          "rag-eval"
+        ],
+        "relevant": [
+          "ragas",
+          "rag-eval"
+        ]
+      },
+      {
+        "id": "e22",
+        "query": "generative recommendation with large language models",
+        "type": "direct",
+        "ranked": [
+          "llm-recsys-survey",
+          "toolformer",
+          "rag-recsys-survey",
+          "kg-rag",
+          "rag-survey"
+        ],
+        "relevant": [
+          "llm-recsys-survey",
+          "rag-recsys-survey"
+        ]
+      }
+    ]
+  }
+}

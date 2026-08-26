@@ -1,0 +1,402 @@
+[
+  {
+    "params": {
+      "propagationHops": 1,
+      "damping": 0.5,
+      "wormholeTopK": 8,
+      "alpha": 0.6,
+      "beta": 0.25,
+      "gamma": 0.15,
+      "bellDamping": 0.2,
+      "topK": 5
+    },
+    "recallAt5": 0.8560606060606062,
+    "mrr": 0.9015151515151516,
+    "ndcgAt5": 0.8143193044529347,
+    "diversity": 0.8135660173160173
+  },
+  {
+    "params": {
+      "propagationHops": 1,
+      "damping": 0.5,
+      "wormholeTopK": 8,
+      "alpha": 0.6,
+      "beta": 0.25,
+      "gamma": 0.15,
+      "bellDamping": 0.25,
+      "topK": 5
+    },
+    "recallAt5": 0.8560606060606062,
+    "mrr": 0.9015151515151516,
+    "ndcgAt5": 0.8133845065455166,
+    "diversity": 0.8225523088023089
+  },
+  {
+    "params": {
+      "propagationHops": 1,
+      "damping": 0.5,
+      "wormholeTopK": 8,
+      "alpha": 0.5,
+      "beta": 0.3,
+      "gamma": 0.2,
+      "bellDamping": 0.25,
+      "topK": 5
+    },
+    "recallAt5": 0.8560606060606062,
+    "mrr": 0.893939393939394,
+    "ndcgAt5": 0.8077988203678359,
+    "diversity": 0.8181060606060607
+  },
+  {
+    "params": {
+      "propagationHops": 1,
+      "damping": 0.4,
+      "wormholeTopK": 8,
+      "alpha": 0.6,
+      "beta": 0.25,
+      "gamma": 0.15,
+      "bellDamping": 0.25,
+      "topK": 5
+    },
+    "recallAt5": 0.8560606060606062,
+    "mrr": 0.9015151515151516,
+    "ndcgAt5": 0.8075168001590598,
+    "diversity": 0.82741341991342
+  },
+  {
+    "params": {
+      "propagationHops": 2,
+      "damping": 0.4,
+      "wormholeTopK": 8,
+      "alpha": 0.6,
+      "beta": 0.25,
+      "gamma": 0.15,
+      "bellDamping": 0.2,
+      "topK": 5
+    },
+    "recallAt5": 0.8560606060606062,
+    "mrr": 0.9015151515151516,
+    "ndcgAt5": 0.8075168001590598,
+    "diversity": 0.8268993506493508
+  },
+  {
+    "params": {
+      "propagationHops": 2,
+      "damping": 0.7,
+      "wormholeTopK": 8,
+      "alpha": 0.6,
+      "beta": 0.25,
+      "gamma": 0.15,
+      "bellDamping": 0.35,
+      "topK": 5
+    },
+    "recallAt5": 0.8712121212121212,
+    "mrr": 0.8863636363636364,
+    "ndcgAt5": 0.8059063824390381,
+    "diversity": 0.8240854978354979
+  },
+  {
+    "params": {
+      "propagationHops": 2,
+      "damping": 0.5,
+      "wormholeTopK": 8,
+      "alpha": 0.6,
+      "beta": 0.25,
+      "gamma": 0.15,
+      "bellDamping": 0.2,
+      "topK": 5
+    },
+    "recallAt5": 0.8333333333333335,
+    "mrr": 0.9015151515151516,
+    "ndcgAt5": 0.8023162079723624,
+    "diversity": 0.8218127705627706
+  },
+  {
+    "params": {
+      "propagationHops": 2,
+      "damping": 0.7,
+      "wormholeTopK": 8,
+      "alpha": 0.6,
+      "beta": 0.25,
+      "gamma": 0.15,
+      "bellDamping": 0.2,
+      "topK": 5
+    },
+    "recallAt5": 0.8560606060606062,
+    "mrr": 0.8863636363636364,
+    "ndcgAt5": 0.8023008069009201,
+    "diversity": 0.8095436507936509
+  },
+  {
+    "params": {
+      "propagationHops": 1,
+      "damping": 0.5,
+      "wormholeTopK": 8,
+      "alpha": 0.5,
+      "beta": 0.3,
+      "gamma": 0.2,
+      "bellDamping": 0.2,
+      "topK": 5
+    },
+    "recallAt5": 0.8409090909090909,
+    "mrr": 0.893939393939394,
+    "ndcgAt5": 0.8004817186144652,
+    "diversity": 0.8060984848484849
+  },
+  {
+    "params": {
+      "propagationHops": 2,
+      "damping": 0.4,
+      "wormholeTopK": 8,
+      "alpha": 0.6,
+      "beta": 0.25,
+      "gamma": 0.15,
+      "bellDamping": 0.35,
+      "topK": 5
+    },
+    "recallAt5": 0.8333333333333335,
+    "mrr": 0.9015151515151516,
+    "ndcgAt5": 0.799523364883522,
+    "diversity": 0.8328517316017315
+  },
+  {
+    "params": {
+      "propagationHops": 2,
+      "damping": 0.5,
+      "wormholeTopK": 8,
+      "alpha": 0.6,
+      "beta": 0.25,
+      "gamma": 0.15,
+      "bellDamping": 0.25,
+      "topK": 5
+    },
+    "recallAt5": 0.8333333333333335,
+    "mrr": 0.9015151515151516,
+    "ndcgAt5": 0.799523364883522,
+    "diversity": 0.8263401875901877
+  },
+  {
+    "params": {
+      "propagationHops": 2,
+      "damping": 0.5,
+      "wormholeTopK": 8,
+      "alpha": 0.6,
+      "beta": 0.25,
+      "gamma": 0.15,
+      "bellDamping": 0.35,
+      "topK": 5
+    },
+    "recallAt5": 0.8333333333333335,
+    "mrr": 0.9015151515151516,
+    "ndcgAt5": 0.799523364883522,
+    "diversity": 0.8300919913419914
+  },
+  {
+    "params": {
+      "propagationHops": 1,
+      "damping": 0.4,
+      "wormholeTopK": 8,
+      "alpha": 0.5,
+      "beta": 0.3,
+      "gamma": 0.2,
+      "bellDamping": 0.35,
+      "topK": 5
+    },
+    "recallAt5": 0.8409090909090909,
+    "mrr": 0.9015151515151516,
+    "ndcgAt5": 0.7991721676964364,
+    "diversity": 0.8252398989898991
+  },
+  {
+    "params": {
+      "propagationHops": 2,
+      "damping": 0.7,
+      "wormholeTopK": 8,
+      "alpha": 0.6,
+      "beta": 0.25,
+      "gamma": 0.15,
+      "bellDamping": 0.5,
+      "topK": 5
+    },
+    "recallAt5": 0.8712121212121212,
+    "mrr": 0.8825757575757577,
+    "ndcgAt5": 0.7991062618582009,
+    "diversity": 0.8356601731601733
+  },
+  {
+    "params": {
+      "propagationHops": 1,
+      "damping": 0.4,
+      "wormholeTopK": 8,
+      "alpha": 0.6,
+      "beta": 0.25,
+      "gamma": 0.15,
+      "bellDamping": 0.2,
+      "topK": 5
+    },
+    "recallAt5": 0.8333333333333335,
+    "mrr": 0.9015151515151516,
+    "ndcgAt5": 0.7986671529336437,
+    "diversity": 0.8269264069264071
+  },
+  {
+    "params": {
+      "propagationHops": 1,
+      "damping": 0.4,
+      "wormholeTopK": 8,
+      "alpha": 0.6,
+      "beta": 0.25,
+      "gamma": 0.15,
+      "bellDamping": 0.35,
+      "topK": 5
+    },
+    "recallAt5": 0.8333333333333335,
+    "mrr": 0.9015151515151516,
+    "ndcgAt5": 0.798588566976104,
+    "diversity": 0.8289556277056277
+  },
+  {
+    "params": {
+      "propagationHops": 1,
+      "damping": 0.5,
+      "wormholeTopK": 8,
+      "alpha": 0.6,
+      "beta": 0.25,
+      "gamma": 0.15,
+      "bellDamping": 0.5,
+      "topK": 5
+    },
+    "recallAt5": 0.8560606060606062,
+    "mrr": 0.893939393939394,
+    "ndcgAt5": 0.79851525887572,
+    "diversity": 0.8392279942279942
+  },
+  {
+    "params": {
+      "propagationHops": 2,
+      "damping": 0.4,
+      "wormholeTopK": 8,
+      "alpha": 0.6,
+      "beta": 0.25,
+      "gamma": 0.15,
+      "bellDamping": 0.25,
+      "topK": 5
+    },
+    "recallAt5": 0.8333333333333335,
+    "mrr": 0.9015151515151516,
+    "ndcgAt5": 0.7967350859422737,
+    "diversity": 0.8297943722943724
+  },
+  {
+    "params": {
+      "propagationHops": 2,
+      "damping": 0.7,
+      "wormholeTopK": 8,
+      "alpha": 0.6,
+      "beta": 0.25,
+      "gamma": 0.15,
+      "bellDamping": 0.25,
+      "topK": 5
+    },
+    "recallAt5": 0.8560606060606062,
+    "mrr": 0.8863636363636364,
+    "ndcgAt5": 0.7967196848708314,
+    "diversity": 0.8196212121212123
+  },
+  {
+    "params": {
+      "propagationHops": 1,
+      "damping": 0.5,
+      "wormholeTopK": 8,
+      "alpha": 0.5,
+      "beta": 0.3,
+      "gamma": 0.2,
+      "bellDamping": 0.35,
+      "topK": 5
+    },
+    "recallAt5": 0.8560606060606062,
+    "mrr": 0.8863636363636364,
+    "ndcgAt5": 0.7947876178794615,
+    "diversity": 0.82116341991342
+  },
+  {
+    "params": {
+      "propagationHops": 2,
+      "damping": 0.5,
+      "wormholeTopK": 8,
+      "alpha": 0.6,
+      "beta": 0.25,
+      "gamma": 0.15,
+      "bellDamping": 0.5,
+      "topK": 5
+    },
+    "recallAt5": 0.8484848484848485,
+    "mrr": 0.893939393939394,
+    "ndcgAt5": 0.7932853340327167,
+    "diversity": 0.8463383838383838
+  },
+  {
+    "params": {
+      "propagationHops": 1,
+      "damping": 0.7,
+      "wormholeTopK": 8,
+      "alpha": 0.6,
+      "beta": 0.25,
+      "gamma": 0.15,
+      "bellDamping": 0.2,
+      "topK": 5
+    },
+    "recallAt5": 0.856060606060606,
+    "mrr": 0.8636363636363636,
+    "ndcgAt5": 0.7925747433645036,
+    "diversity": 0.8126046176046178
+  },
+  {
+    "params": {
+      "propagationHops": 1,
+      "damping": 0.7,
+      "wormholeTopK": 8,
+      "alpha": 0.6,
+      "beta": 0.25,
+      "gamma": 0.15,
+      "bellDamping": 0.25,
+      "topK": 5
+    },
+    "recallAt5": 0.856060606060606,
+    "mrr": 0.8636363636363636,
+    "ndcgAt5": 0.7925747433645036,
+    "diversity": 0.8126046176046178
+  },
+  {
+    "params": {
+      "propagationHops": 1,
+      "damping": 0.5,
+      "wormholeTopK": 8,
+      "alpha": 0.6,
+      "beta": 0.25,
+      "gamma": 0.15,
+      "bellDamping": 0.35,
+      "topK": 5
+    },
+    "recallAt5": 0.8409090909090909,
+    "mrr": 0.893939393939394,
+    "ndcgAt5": 0.7917420872381505,
+    "diversity": 0.8290458152958154
+  },
+  {
+    "params": {
+      "propagationHops": 2,
+      "damping": 0.4,
+      "wormholeTopK": 8,
+      "alpha": 0.6,
+      "beta": 0.25,
+      "gamma": 0.15,
+      "bellDamping": 0.5,
+      "topK": 5
+    },
+    "recallAt5": 0.8333333333333335,
+    "mrr": 0.893939393939394,
+    "ndcgAt5": 0.7910960153412842,
+    "diversity": 0.845580808080808
+  }
+]

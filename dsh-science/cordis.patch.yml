@@ -1,0 +1,37 @@
+# dsh-science bundle composition layer.
+#
+# The nine vendored plugins that declare their own `dsh.bundle` metadata are
+# listed directly in the Profile's `dsh.profile.bundles` (see SCIENCE_BUNDLES
+# in dsh-plugin-desktop/src/profile.ts) so each one appears as an individually
+# disableable row in Desktop plugin management.
+#
+# This patch carries everything else:
+#   1. the dsh-science Host entry itself, which provisions the curated skills
+#      into $DSH_HOME/skills on first boot (copy-if-missing, never overwrites);
+#   2. the six vendored plugins that ship no bundle metadata and therefore
+#      need an explicit Loader row.
+#
+# Bare specifiers resolve through the Desktop/Profile package overlay: the
+# packages are dependencies of dsh-science, which is a dependency of
+# dsh-plugin-desktop, so the physical copies live in the application archive
+# and `healProfilesModuleFallback` links them into the Profile fallback root.
+
+- insert:
+    - id: dsh-science
+      name: dsh-science
+
+    # --- host plugins without bundle metadata ---
+    - id: dsh-model-inherit
+      name: dsh-model-inherit
+    - id: zotero-harvest
+      name: "@dsh-external/zotero-harvest"
+    - id: zotero-wave-rag
+      name: "@fisfzy/zotero-wave-rag"
+    - id: dsh-session-search
+      name: "@dsh-external/dsh-session-search"
+
+    # --- client-side UI extensions without bundle metadata ---
+    - id: dsh-input-history
+      name: "@dsh-external/dsh-input-history"
+    - id: dsh-ui-progress
+      name: "@dsh-external/dsh-ui-progress"

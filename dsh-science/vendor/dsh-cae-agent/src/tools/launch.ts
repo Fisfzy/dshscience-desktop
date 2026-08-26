@@ -1,0 +1,234 @@
+/**
+ * tools/launch.ts — Tier-1/ops tool: launch a local Abaqus/CAE GUI session and
+ * auto-start its socket bridge so the rest of the abaqus_* tools can connect.
+ *
+ * This is deliberately a *process/ops* tool, not a modeling tool: it starts a
+ * child process on the host. In an interactive desktop session it pops an
+ * Abaqus/CAE window (that is expected). Once the bridge port answers, every
+ * other tool in this plugin operates against that live session.
+ *
+ * Strategy:
+ *   1. If the bridge port is already listening, return `{ launched: false }`
+ *      (idempotent — reuse the running session).
+ *   2. Write a startup file into the configured workspace that loads
+ *      `abaqus_mcp_plugin.py` into `__main__` **and** calls `mcp_start()`,
+ *      so the bridge opens automatically (no manual menu click).
+ *   3. Spawn `abaqus <command> cae script=<startup.py>` detached.
+ *   4. Poll the bridge port until it listens (respecting `exec.signal` and the
+ *      `launchTimeoutMs` budget), then return the handle.
+ */
+import type { Context } from '@deepseek-ai/cordis'
+import { defineTool, type JsonValue } from '@deepseek-ai/dsh-tools'
+import { spawn } from 'node:child_process'
+import net from 'node:net'
+import fs from 'node:fs'
+import path from 'node:path'
+import crypto from 'node:crypto'
+import type { BridgeHandle } from '../core.js'
+import { bridgeRequest } from '../core.js'
+
+type JsonRecord = Record<string, JsonValue>
+
+/** Plugin launch config subset this tool consumes. */
+export interface LaunchConfig {
+  host: string
+  port: number
+  abaqusCommand: string
+  bridgePluginPath: string
+  workspaceDir: string
+  launchTimeoutMs: number
+}
+
+/** Promise-wrapped net check that a TCP port accepts a connection. */
+function portOpen(host: string, port: number, timeoutMs: number): Promise<boolean> {
+  return new Promise((resolve) => {
+    const socket = new net.Socket()
+    let done = false
+    const finish = (ok: boolean) => {
+      if (done) return
+      done = true
+      socket.destroy()
+      resolve(ok)
+    }
+    socket.setTimeout(timeoutMs)
+    socket.once('connect', () => finish(true))
+    socket.once('error', () => finish(false))
+    socket.once('timeout', () => finish(false))
+    socket.connect(port, host)
+  })
+}
+
+/** Sleep helper that aborts early if the signal fires. */
+function sleep(ms: number, signal?: AbortSignal): Promise<'ok' | 'aborted'> {
+  return new Promise((resolve) => {
+    if (signal?.aborted) {
+      resolve('aborted')
+      return
+    }
+    const timer = setTimeout(() => resolve('ok'), ms)
+    signal?.addEventListener(
+      'abort',
+      () => {
+        clearTimeout(timer)
+        resolve('aborted')
+      },
+      { once: true },
+    )
+  })
+}
+
+/** Wait for the bridge port, or first signal/latency probe success. */
+async function waitForBridge(
+  host: string,
+  port: number,
+  timeoutMs: number,
+  signal?: AbortSignal,
+): Promise<{ ok: boolean; viaPort: boolean }> {
+  const deadline = Date.now() + timeoutMs
+  for (;;) {
+    if (signal?.aborted) return { ok: false, viaPort: false }
+    // First answer that is authoritative is the ping (needs the full bridge up).
+    try {
+      await bridgeRequest({ host, port } as BridgeHandle, 'ping', {}, 8_000, signal)
+      return { ok: true, viaPort: true }
+    } catch {
+      /* not ready yet */
+    }
+    if (Date.now() >= deadline) return { ok: false, viaPort: false }
+    await sleep(1500, signal)
+  }
+}
+
+export function registerLaunch(ctx: Context, config: LaunchConfig): void {
+  ctx.tools.register(
+    defineTool({
+      name: 'abaqus_launch_cae',
+      description:
+        'Launch the local Abaqus/CAE GUI and automatically start its socket bridge (default 127.0.0.1:48152) so the other abaqus_* tools can connect. If the bridge is already up, returns the existing session (idempotent). Pops an Abaqus/CAE window in an interactive desktop session.',
+      parameters: {
+        workspaceDir: { type: 'string', description: 'Optional override: working dir for the Abaqus session (default = plugin config workspaceDir)' },
+      },
+      output: {
+        schema: { type: 'object', additionalProperties: true },
+        render: (_args, value) => {
+          const v = (value ?? {}) as JsonRecord
+          return [
+            {
+              type: 'text',
+              text: v.launched
+                ? `Launched Abaqus/CAE (pid=${String(v.pid ?? '?')}); bridge listening on ${String(v.host ?? '')}:${String(v.port ?? '')}`
+                : `Abaqus bridge already running at ${String(v.host ?? '')}:${String(v.port ?? '')} (${String(v.message ?? 'reused')})`,
+            },
+          ]
+        },
+      },
+      async execute(args, exec) {
+        // 1) Already running => idempotent.
+        if (await portOpen(config.host, config.port, 4_000)) {
+          return {
+            launched: false,
+            host: config.host,
+            port: config.port,
+            message: 'Abaqus socket bridge already listening; reusing the live session',
+          } as JsonRecord
+        }
+
+        // 2) Validate launcher + plugin paths. A launcher that is a real PATH
+        // entry (e.g. `abaqus` → `abaqus.bat`) is NOT a file, so fs.existsSync
+        // would wrongly reject it. Only require the file to exist when config
+        // gave an explicit path (absolute or contains a separator).
+        const abqCmd = config.abaqusCommand.trim().replaceAll('/', '\\')
+        const isExplicitPath = path.isAbsolute(abqCmd) || abqCmd.includes('\\') || abqCmd.includes('/')
+        if (isExplicitPath && !fs.existsSync(abqCmd)) {
+          throw new Error(`abaqusCommand not found: ${abqCmd} (set config.abaqusCommand)`)
+        }
+        if (!abqCmd) {
+          throw new Error('abaqusCommand is empty (set config.abaqusCommand)')
+        }
+        const pluginPath = config.bridgePluginPath
+        if (!fs.existsSync(pluginPath)) {
+          throw new Error(`bridgePluginPath not found: ${pluginPath} (set config.bridgePluginPath)`)
+        }
+
+        // 3) Prepare the workspace + startup file.
+        const ws = path.resolve(args.workspaceDir || config.workspaceDir)
+        fs.mkdirSync(ws, { recursive: true })
+        const startupFile = path.join(ws, `abaqus_mcp_startup_${crypto.randomUUID().slice(0, 8)}.py`)
+        // Keep this startup process alive so the pure-kernel bridge's accept
+        // thread (non-daemon) is never reaped when the script body ends. The
+        // stock plugin stayed alive via the GUI thread / AFX timeout; the
+        // kernel bridge relies on this blocking loop. Without it the CAE
+        // startup unwinds, the child exits, and the bridge port disappears
+        // before waitForBridge sees it.
+        const startupSource = [
+          'import os, sys, json, time, __main__',
+          `plugin = ${JSON.stringify(pluginPath)}`,
+          `if not getattr(__main__, "_ABAQUS_MCP_MENU_REGISTERED", False):`,
+          '    with open(plugin, "r", encoding="utf-8") as _h:',
+          '        exec(compile(_h.read(), plugin, "exec"), __main__.__dict__)',
+          'try:',
+          '    msg = __main__.mcp_start()',
+          '    print("ABAQUS_MCP_BRIDGE_STARTED " + json.dumps(msg), flush=True)',
+          'except Exception as _e:',
+          '    import traceback; print("ABAQUS_MCP_BRIDGE_ERROR " + repr(_e) + "\\n" + traceback.format_exc(), flush=True)',
+          'while True:',
+          '    time.sleep(3600)',
+        ].join('\n')
+        fs.writeFileSync(startupFile, startupSource, 'utf8')
+
+        // 4) Spawn Abaqus/CAE detached with the startup script. `script=` is the
+        // Abaqus parameter that actually executes a Python file after CAE boots
+        // (verified: `startup=` is NOT a valid `cae` option — Abaqus silently
+        // ignores it, so the bridge never opened). `script=` runs the file in
+        // the CAE kernel; the keepalive tail keeps the bridge accept thread
+        // alive.
+        // On Windows a `.bat`/`.cmd` launcher must run through the shell (cmd.exe);
+        // Node's spawn won't execute a batch file directly. `shell: true` lets the
+        // os resolve abaqus.bat (the entry that correctly handles `cae script=`).
+        const child = spawn(abqCmd, ['cae', `script=${startupFile}`], {
+          cwd: ws,
+          detached: true,
+          stdio: 'ignore',
+          windowsHide: true,
+          shell: process.platform === 'win32',
+        })
+        // Detached + unref so the launched CAE outlives this tool call.
+        child.unref()
+        let aborted = false
+        const onAbort = () => {
+          aborted = true
+        }
+        if (exec.signal) {
+          if (exec.signal.aborted) onAbort()
+          else exec.signal.addEventListener('abort', onAbort, { once: true })
+        }
+
+        // 5) Wait for the bridge to answer (cancellable).
+        if (aborted) throw new Error('abaqus_launch_cae aborted before the bridge came up')
+        const wait = await waitForBridge(config.host, config.port, config.launchTimeoutMs, exec.signal)
+        if (exec.signal?.aborted || aborted) {
+          throw new Error('abaqus_launch_cae aborted while waiting for the Abaqus bridge')
+        }
+        if (!wait.ok) {
+          throw new Error(
+            `Abaqus/CAE did not open its socket bridge within ${config.launchTimeoutMs}ms. ` +
+              `Launched pid=${child.pid ?? '?'} from ${abqCmd}; check the Abaqus window / license. (script=${startupFile})`,
+          )
+        }
+
+        // 6) Report success.
+        return {
+          launched: true,
+          pid: child.pid ?? null,
+          host: config.host,
+          port: config.port,
+          workspace: ws,
+          viaProbe: wait.viaPort,
+          message: 'Abaqus/CAE launched and socket bridge is ready',
+        } as JsonRecord
+      },
+      timeoutMs: config.launchTimeoutMs + 15_000,
+      isConcurrencySafe: () => false,
+    }),
+  )
+}

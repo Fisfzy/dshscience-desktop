@@ -1,0 +1,21 @@
+{
+  "name": "@dsh-external/zotero-harvest",
+  "version": "0.2.0",
+  "description": "Zotero literature harvesting: search, resolve download links, save into the local Zotero library, and stay searchable via zotero-wave-rag",
+  "private": true,
+  "type": "module",
+  "main": "./lib/index.js",
+  "engines": {
+    "dsh": ">=0.0.1"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test:smoke": "node tests/smoke.mjs",
+    "test:e2e": "node tests/e2e.mjs"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "*",
+    "cordis": "*"
+  },
+  "license": "MIT"
+}

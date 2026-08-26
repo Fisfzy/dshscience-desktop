@@ -1,0 +1,62 @@
+{
+  "upstream": "npm:@deepseek-ai/dsh",
+  "snapshotRefPrefix": "refs/heads/",
+  "snapshotBranch": "master",
+  "sourcePathPrefix": "/Users/chris/.dsh/source/current",
+  "npm": {
+    "package": "@deepseek-ai/dsh",
+    "distTag": "next",
+    "registry": "https://registry.npmjs.org/",
+    "cacheDir": "/Users/chris/.dsh/npm-cache"
+  },
+  "extensions": [
+    {
+      "name": "dsh-track",
+      "npm": "@fakechris/dsh-track",
+      "repo": "/Users/chris/source/dsh-involute",
+      "profile": "web",
+      "skills": [
+        "skills/dsh-track"
+      ],
+      "relink": {
+        "node_modules/@deepseek-ai/dsh-session": "packages/core/session",
+        "node_modules/@deepseek-ai/dsh-storage": "packages/storage/storage",
+        "node_modules/@deepseek-ai/dsh-storage-json": "packages/storage/storage-json",
+        "node_modules/@deepseek-ai/dsh-system-prompt": "packages/core/system-prompt",
+        "node_modules/@deepseek-ai/dsh-tools": "packages/core/tools",
+        "node_modules/@deepseek-ai/cordis": "vendor/cordis",
+        "node_modules/@deepseek-ai/dsh-llm": "packages/llm/llm"
+      },
+      "tsconfig": "tsconfig.json",
+      "tsconfigOut": "tsconfig.ab.json",
+      "typecheck": "pnpm run typecheck",
+      "build": "pnpm run build",
+      "test": "pnpm test"
+    }
+  ],
+  "web": {
+    "port": 3081,
+    "host": "127.0.0.1",
+    "productionPort": 3080,
+    "startupTimeoutSec": 180,
+    "smokePaths": [
+      "/"
+    ],
+    "smokeClientIds": [
+      "@fakechris/dsh-track"
+    ]
+  },
+  "acceptance": {
+    "mode": "manual",
+    "e2e": {
+      "enabled": true,
+      "checks": [
+        {
+          "id": "@fakechris/dsh-track",
+          "selector": "#dsh-track-fab",
+          "expect": "present"
+        }
+      ]
+    }
+  }
+}

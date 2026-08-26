@@ -1,0 +1,19 @@
+{
+  "name": "@fisfzy/zotero-wave-rag",
+  "version": "0.7.2",
+  "description": "Wave-semantics RAG over a Zotero paper library — DSH external plugin (local only, never published)",
+  "private": true,
+  "type": "module",
+  "main": "./lib/index.js",
+  "engines": {
+    "dsh": ">=0.0.1"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "verify": "ZWR_CONFIG_DIR=/tmp/zwr-verify-empty node --import /root/.dsh/source/current/node_modules/tsx/dist/esm/index.mjs scripts/verify-plugin.mjs"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "*",
+    "cordis": "*"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "zotero-wave-rag",
+  "version": "0.7.2",
+  "main": "./lib/index.js",
+  "description": "Wave-semantics RAG over a Zotero paper library: tag-river graph propagation, wormhole jumps, bell-damper diversity, Ω re-rank, and detail-card generation",
+  "engines": {
+    "dsh": ">=0.0.1"
+  },
+  "contributes": {
+    "tools": [
+      "zotero_status",
+      "zotero_search",
+      "zotero_paper_detail",
+      "zotero_compare",
+      "zotero_embedder"
+    ],
+    "skills": []
+  }
+}

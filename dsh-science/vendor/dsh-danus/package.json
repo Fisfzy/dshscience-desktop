@@ -1,0 +1,88 @@
+{
+  "name": "dsh-danus",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Danus-native DSH plugin suite: verifier-gated mathematical proof-search orchestration (fact graph, role-gated tools, cold-start verifier, worker swarm, orchestration tools, heartbeats).",
+  "license": "Apache-2.0",
+  "author": "Fisfzy",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fisfzy/dsh-danus.git"
+  },
+  "homepage": "https://github.com/Fisfzy/dsh-danus#readme",
+  "bugs": {
+    "url": "https://github.com/Fisfzy/dsh-danus/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "danus",
+    "math",
+    "proof-search",
+    "verifier",
+    "multi-agent",
+    "better-sidebar"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "lib/ts/client.mjs",
+  "exports": {
+    ".": {
+      "default": "./lib/ts/client.mjs"
+    },
+    "./client": "./lib/client.js",
+    "./lib/ts/*": "./lib/ts/*",
+    "./src/*": "./src/*",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "lib/client.js",
+    "lib/ts",
+    "cordis.patch.yml",
+    "skills",
+    "contracts"
+  ],
+  "dependencies": {
+    "tsx": "^4.19.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ],
+      "platform": "web"
+    }
+  },
+  "dshClient": {
+    "inject": [
+      "@deepseek-ai/dsh-client-runtime"
+    ],
+    "platform": "web"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx/esm --test test/*.test.ts",
+    "build": "tsdown --config ./tsdown.config.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "@types/react": "~18.3.1",
+    "@types/react-dom": "~18.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "schemastery": "^3.18.0",
+    "tsdown": "0.22.2",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

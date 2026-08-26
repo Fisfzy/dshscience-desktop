@@ -1,0 +1,30 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "lib",
+    "rootDir": "src",
+    "types": [
+      "node"
+    ],
+    "typeRoots": [
+      "/root/.dsh/source/current/node_modules/@types",
+      "/root/.dsh/source/current/apps/web/node_modules/@types"
+    ],
+    "paths": {
+      "cordis": [
+        "/root/.dsh/source/current/vendor/cordis/lib/types/index.d.ts"
+      ],
+      "@deepseek-ai/dsh-tools": [
+        "/root/.dsh/source/current/packages/core/tools/lib/types/index.d.ts"
+      ]
+    }
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "tests",
+    "lib",
+    "packages"
+  ]
+}

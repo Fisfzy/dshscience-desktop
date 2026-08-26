@@ -1,0 +1,13 @@
+{
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "description": "Mirror the live selected model onto agent.options so system-prompt variables and subagent inheritance see the effective model",
+  "files": [
+    "lib/**",
+    "LICENSE",
+    "README.md"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "name": "dsh-model-inherit"
+}

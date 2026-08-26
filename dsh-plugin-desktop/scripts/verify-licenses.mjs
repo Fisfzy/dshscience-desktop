@@ -46,6 +46,34 @@ const NOTICE_LICENSES = new Set([
 ])
 
 /**
+ * Documented redistribution exceptions, reviewed by the distribution owner.
+ * Each entry must name the exact package and state the legal basis.
+ *
+ * - `@univerjs-pro/*`: commercial Univer Pro SDK packages pulled in by the
+ *   vendored `dsh-univer-office` fork. They carry no license metadata on npm.
+ *   This fork is an internal/owner-distributed build: the owner operates the
+ *   Univer Pro stack locally and assumes the redistribution responsibility.
+ *   Revisit before any public release of the installers.
+ */
+const DOCUMENTED_EXCEPTIONS = new Map([
+  ['@univerjs-pro/cli-assets', 'owner-distributed internal build; see docs/science-layer.md'],
+  ['@univerjs-pro/engine-formula-rust-binding', 'owner-distributed internal build; see docs/science-layer.md'],
+  ['@univerjs-pro/exchange-node-binding', 'owner-distributed internal build; see docs/science-layer.md'],
+  ['@univerjs-pro/engine-formula-rust-binding-win32-x64-msvc', 'owner-distributed internal build; see docs/science-layer.md'],
+  ['@univerjs-pro/exchange-node-binding-win32-x64-msvc', 'owner-distributed internal build; see docs/science-layer.md'],
+])
+
+/**
+ * An SPDX `OR` expression passes when at least one branch is redistributable.
+ * The allowlist intentionally stays on simple expressions; parentheses are
+ * only tolerated around single identifiers.
+ */
+function licenseAllowed(expression) {
+  const branches = expression.split(/\s+OR\s+/u).map(branch => branch.replace(/[()]/gu, '').trim())
+  return branches.some(branch => ALLOWED_LICENSES.has(branch) || NOTICE_LICENSES.has(branch))
+}
+
+/**
  * Locate one installed package manifest by walking node_modules directories
  * upward from the parent manifest. Reads the real package.json regardless of
  * the package's `exports` map, which often hides the `./package.json` subpath.
@@ -91,20 +119,25 @@ for (let index = 0; index < queue.length; index += 1) {
   const manifest = JSON.parse(readFileSync(current.manifestPath, 'utf8'))
 
   if (current.name !== rootManifest.name) {
-    const license = licenseExpression(manifest)
-    const hasLicenseFile = existsSync(join(dirname(current.manifestPath), 'LICENSE'))
-      || existsSync(join(dirname(current.manifestPath), 'LICENSE.md'))
-      || existsSync(join(dirname(current.manifestPath), 'LICENSE.txt'))
-    if (license === undefined && !hasLicenseFile) {
-      failures.push(`${current.name}: no license field and no LICENSE file`)
-    } else if (license !== undefined && license.startsWith('SEE LICENSE IN ')) {
-      if (!hasLicenseFile) {
-        failures.push(`${current.name}: license refers to ${JSON.stringify(license)} but no LICENSE file is shipped`)
+    const exception = DOCUMENTED_EXCEPTIONS.get(current.name)
+    if (exception !== undefined) {
+      manifests.push({ name: current.name, version: manifest.version, license: `${licenseExpression(manifest) ?? 'NONE'} (exception: ${exception})` })
+    } else {
+      const license = licenseExpression(manifest)
+      const hasLicenseFile = existsSync(join(dirname(current.manifestPath), 'LICENSE'))
+        || existsSync(join(dirname(current.manifestPath), 'LICENSE.md'))
+        || existsSync(join(dirname(current.manifestPath), 'LICENSE.txt'))
+      if (license === undefined && !hasLicenseFile) {
+        failures.push(`${current.name}: no license field and no LICENSE file`)
+      } else if (license !== undefined && license.startsWith('SEE LICENSE IN ')) {
+        if (!hasLicenseFile) {
+          failures.push(`${current.name}: license refers to ${JSON.stringify(license)} but no LICENSE file is shipped`)
+        }
+      } else if (license !== undefined && !licenseAllowed(license)) {
+        failures.push(`${current.name}: license ${JSON.stringify(license)} is not on the redistribution allowlist`)
       }
-    } else if (license !== undefined && !ALLOWED_LICENSES.has(license) && !NOTICE_LICENSES.has(license)) {
-      failures.push(`${current.name}: license ${JSON.stringify(license)} is not on the redistribution allowlist`)
+      manifests.push({ name: current.name, version: manifest.version, license: license ?? 'SEE LICENSE FILE' })
     }
-    manifests.push({ name: current.name, version: manifest.version, license: license ?? 'SEE LICENSE FILE' })
   }
 
   const requireFrom = createRequire(current.manifestPath)

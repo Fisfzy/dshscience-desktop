@@ -1,0 +1,32 @@
+# dsh-danus bundle:插入全部 Danus 插件行,按包名子路径(经 node_modules junction
+# 解析;bundle 内路径必须可被 imports 解析,不能是 --patch 用的 file:///相对)。
+# 各 profile 用 id-targeted 行覆写 config(role/main 等)。
+#
+# 桌面版适配:入口指向 lib/ts/*.mjs 桥(经 tsx 转译加载 src/plugins/*.ts),
+# 规避 Node 对 node_modules 下 .ts 的禁剥限制;运行时路径仍锚在 src/**。
+- insert:
+    # 包名锚点入口:让 client-modules 扫描器以 options.name == 'dsh-danus' 发现本包
+    # 的 client half(src/client → lib/client.js)。必须 name 恰好等于包名,子路径
+    # 入口做不到 —— 详见 src/plugins/client.ts 注释。
+    - id: dsh-danus
+      name: 'dsh-danus'
+    - id: danus-verify-service
+      name: 'dsh-danus/lib/ts/verify-service.mjs'
+      config:
+        timeoutSeconds: 900
+    - id: danus-swarm-service
+      name: 'dsh-danus/lib/ts/swarm-service.mjs'
+    - id: danus-gateway
+      name: 'dsh-danus/lib/ts/gateway.mjs'
+    - id: danus-orchestration
+      name: 'dsh-danus/lib/ts/orchestration.mjs'
+    - id: danus-heartbeat
+      name: 'dsh-danus/lib/ts/heartbeat.mjs'
+    - id: danus-paper
+      name: 'dsh-danus/lib/ts/paper.mjs'
+    - id: danus-summary
+      name: 'dsh-danus/lib/ts/summary.mjs'
+    - id: danus-observability
+      name: 'dsh-danus/lib/ts/observability.mjs'
+    - id: danus-console-api
+      name: 'dsh-danus/lib/ts/console-api.mjs'

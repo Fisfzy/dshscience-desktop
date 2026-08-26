@@ -8,7 +8,10 @@ import { fileURLToPath } from 'node:url'
 const require = createRequire(import.meta.url)
 const packageRoot = dirname(dirname(fileURLToPath(import.meta.url)))
 const builderCli = require.resolve('electron-builder/cli.js')
-const result = spawnSync(process.execPath, [builderCli, '--dir'], {
+// Native modules ship with prebuilds (node-pty, koffi, sharp); rebuilding
+// them from source requires a local MSVC toolchain, which packaging machines
+// do not need. The signed packaging scripts already pass the same flag.
+const result = spawnSync(process.execPath, [builderCli, '--dir', '--config.npmRebuild=false'], {
   cwd: packageRoot,
   env: {
     ...process.env,

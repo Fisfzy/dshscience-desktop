@@ -1,0 +1,45 @@
+{
+  "name": "dsh-science",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DSH Desktop science layer: preinstalled research skills and the curated, conflict-verified plugin set",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "files": [
+    "lib/**",
+    "skills/**",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "scripts": {
+    "check": "node --check lib/index.js"
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-home-paths": "0.1.1-rc.2",
+    "@deepseek-ai/dsh-plan-execute": "file:vendor/@deepseek-ai/dsh-plan-execute",
+    "@deepseek-ai/dsh-session-health": "file:vendor/@deepseek-ai/dsh-session-health",
+    "@deepseek-ai/dsh-toolkit": "file:vendor/@deepseek-ai/dsh-toolkit",
+    "@dsh-external/dsh-input-history": "file:vendor/@dsh-external/dsh-input-history",
+    "@dsh-external/dsh-session-search": "file:vendor/@dsh-external/dsh-session-search",
+    "@dsh-external/dsh-ui-progress": "file:vendor/@dsh-external/dsh-ui-progress",
+    "@dsh-external/zotero-harvest": "file:vendor/@dsh-external/zotero-harvest",
+    "@fisfzy/zotero-wave-rag": "file:vendor/@fisfzy/zotero-wave-rag",
+    "dsh-cae-agent": "file:vendor/dsh-cae-agent",
+    "dsh-danus": "file:vendor/dsh-danus",
+    "dsh-ego-browser": "file:vendor/dsh-ego-browser",
+    "dsh-focus-chat": "file:vendor/dsh-focus-chat",
+    "dsh-model-inherit": "file:vendor/dsh-model-inherit",
+    "dsh-univer-office": "file:vendor/dsh-univer-office",
+    "dsh-ventus-plugins": "file:vendor/dsh-ventus-plugins"
+  }
+}

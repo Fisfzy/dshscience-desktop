@@ -1,0 +1,14 @@
+dsh-danus
+Copyright 2026 Fisfzy
+
+This product includes software developed at frenzymath:
+
+  Danus — Orchestrating Mathematical Reasoning Agents with Fact-Graph Memory
+  https://github.com/frenzymath/Danus
+  Copyright the Danus authors (Bin Wu et al.)
+  Licensed under the Apache License, Version 2.0
+
+dsh-danus is a native TypeScript/DeepSeek-Harness port of Danus. The system
+architecture, agent contracts, worker/verifier skills, precheck patterns, and
+behavior specifications are derived from Danus; see PARITY.md for the
+per-feature correspondence and all intentional differences.

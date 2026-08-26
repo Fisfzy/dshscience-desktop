@@ -1,0 +1,17 @@
+# dev overlay:以 main 角色加载 dsh-danus,用于 headless 冒烟
+# 注意:Windows 路径必须用 file:/// URL 形式,空格转 %20。
+- insert:
+    - id: danus-verify-service
+      name: 'file:///D:/AIWORK/DSH%20PLUGIN%20DEV/CAM%20ZHB/dsh-danus/src/plugins/verify-service.ts'
+    - id: danus-swarm-service
+      name: 'file:///D:/AIWORK/DSH%20PLUGIN%20DEV/CAM%20ZHB/dsh-danus/src/plugins/swarm-service.ts'
+    - id: danus-gateway
+      name: 'file:///D:/AIWORK/DSH%20PLUGIN%20DEV/CAM%20ZHB/dsh-danus/src/plugins/gateway.ts'
+      config:
+        role: main
+        agentsRoot: 'D:/AIWORK/DSH PLUGIN DEV/CAM ZHB/runtime/projects'
+        author: main_agent
+    - id: danus-orchestration
+      name: 'file:///D:/AIWORK/DSH%20PLUGIN%20DEV/CAM%20ZHB/dsh-danus/src/plugins/orchestration.ts'
+    - id: danus-heartbeat
+      name: 'file:///D:/AIWORK/DSH%20PLUGIN%20DEV/CAM%20ZHB/dsh-danus/src/plugins/heartbeat.ts'

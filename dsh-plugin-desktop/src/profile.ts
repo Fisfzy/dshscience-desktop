@@ -70,6 +70,26 @@ export const DESKTOP_PROFILE_ROOT = 'cordis.yml'
 const BIN_NAME = DESKTOP_PACKAGE_NAME
 const REQUIRED_BUNDLES = requiredWebBundles()
 const REQUIRED_BUNDLE_SET = new Set(REQUIRED_BUNDLES)
+/**
+ * Curated science layer seeded into every desktop profile generation.
+ * `dsh-science` composes first so its patch rows (and skill provisioning) are
+ * in place before the individually disableable science plugin bundles.
+ * Every entry stays user-disableable through Desktop plugin management; like
+ * the installation-owned prefix, the list is normalized back on each boot.
+ */
+export const SCIENCE_BUNDLES: readonly string[] = [
+  'dsh-science',
+  'dsh-cae-agent',
+  'dsh-danus',
+  'dsh-focus-chat',
+  'dsh-ego-browser',
+  'dsh-ventus-plugins',
+  'dsh-univer-office',
+  '@deepseek-ai/dsh-plan-execute',
+  '@deepseek-ai/dsh-session-health',
+  '@deepseek-ai/dsh-toolkit',
+]
+const SCIENCE_BUNDLE_SET = new Set(SCIENCE_BUNDLES)
 const OBSOLETE_DESKTOP_BUNDLE_SET = new Set(['@deepseek-ai/dsh-desktop-app'])
 const INSTALL_ANCHOR = unpackedAsarPath(fileURLToPath(new URL('../package.json', import.meta.url)))
 const DESKTOP_PATCH_PATH = fileURLToPath(new URL('../cordis.patch.yml', import.meta.url))
@@ -282,13 +302,15 @@ export interface SkippedOptionalEntry {
 /**
  * Normalize the installation-owned prefix while preserving third-party order.
  * @param current - current persistent bundle list.
- * @returns base, Web carrier, then every third-party bundle in prior order.
+ * @returns base, Web carrier, the curated science layer, then every
+ *   third-party bundle in prior order.
  */
 export function desktopBundleList(current: readonly string[]): string[] {
   const thirdParty = current.filter(name => !REQUIRED_BUNDLE_SET.has(name)
+    && !SCIENCE_BUNDLE_SET.has(name)
     && name !== DESKTOP_PACKAGE_NAME
     && !OBSOLETE_DESKTOP_BUNDLE_SET.has(name))
-  return [...REQUIRED_BUNDLES, ...thirdParty]
+  return [...REQUIRED_BUNDLES, ...SCIENCE_BUNDLES, ...thirdParty]
 }
 
 /** Return whether two ordered string lists are identical. */
