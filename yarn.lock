@@ -3277,7 +3277,7 @@ __metadata:
 
 "@deepseek-ai/dsh-plan-execute@file:vendor/@deepseek-ai/dsh-plan-execute::locator=dsh-science%40workspace%3Adsh-science":
   version: 0.0.1
-  resolution: "@deepseek-ai/dsh-plan-execute@file:vendor/@deepseek-ai/dsh-plan-execute#vendor/@deepseek-ai/dsh-plan-execute::hash=5403fd&locator=dsh-science%40workspace%3Adsh-science"
+  resolution: "@deepseek-ai/dsh-plan-execute@file:vendor/@deepseek-ai/dsh-plan-execute#vendor/@deepseek-ai/dsh-plan-execute::hash=f213ba&locator=dsh-science%40workspace%3Adsh-science"
   dependencies:
     schemastery: "npm:^3.18.0"
   peerDependencies:
@@ -3310,7 +3310,7 @@ __metadata:
       optional: true
     react:
       optional: true
-  checksum: 10c0/7ab91a8c72bdd0aa5e9d6595419207b0615951e6d2e9e30563e1edffb53a541b1c1f49385960c65c9c9de269bf112351ed39ca98806c7af05cf2382192869d38
+  checksum: 10c0/b57a22e87535c9a24e04d90c1987fbe83618a33ec40190722d5880dc01bd60d45b9015e247fd0b8d69f8dead80b71bc1b7cda514b72b1461e7c187d09fc00428
   languageName: node
   linkType: hard
 
@@ -3493,11 +3493,11 @@ __metadata:
 
 "@deepseek-ai/dsh-session-health@file:vendor/@deepseek-ai/dsh-session-health::locator=dsh-science%40workspace%3Adsh-science":
   version: 0.0.1
-  resolution: "@deepseek-ai/dsh-session-health@file:vendor/@deepseek-ai/dsh-session-health#vendor/@deepseek-ai/dsh-session-health::hash=ffcb72&locator=dsh-science%40workspace%3Adsh-science"
+  resolution: "@deepseek-ai/dsh-session-health@file:vendor/@deepseek-ai/dsh-session-health#vendor/@deepseek-ai/dsh-session-health::hash=4fd0e2&locator=dsh-science%40workspace%3Adsh-science"
   peerDependencies:
     "@deepseek-ai/dsh-tools": "*"
     cordis: "*"
-  checksum: 10c0/61cf29260a393c26b9b6eb7bd3eac4c4dca91e4bfe08aea8e367408c0b3f133a4ddda2f8ea7bce08d94d7937cf77d98eda075322587f179d68b7cc7defc6a289
+  checksum: 10c0/47a3c5c2f7d9924a0e6e8c7cfa75c2dbff8538d11c4b5545693dc56cd021041f0bcf67c77984d0331592957b061ea34c32ddf3573f3bff7cb4f2efe8a468c1ea
   languageName: node
   linkType: hard
 
@@ -4521,12 +4521,12 @@ __metadata:
 
 "@deepseek-ai/dsh-toolkit@file:vendor/@deepseek-ai/dsh-toolkit::locator=dsh-science%40workspace%3Adsh-science":
   version: 0.0.1
-  resolution: "@deepseek-ai/dsh-toolkit@file:vendor/@deepseek-ai/dsh-toolkit#vendor/@deepseek-ai/dsh-toolkit::hash=e56867&locator=dsh-science%40workspace%3Adsh-science"
+  resolution: "@deepseek-ai/dsh-toolkit@file:vendor/@deepseek-ai/dsh-toolkit#vendor/@deepseek-ai/dsh-toolkit::hash=be0f4d&locator=dsh-science%40workspace%3Adsh-science"
   peerDependencies:
     "@deepseek-ai/dsh-invariants": "*"
     "@deepseek-ai/dsh-tools": "*"
     cordis: "*"
-  checksum: 10c0/958d755cb13b3751de1177e00e6a86db50958bedf8ec3d4db8beff676dd9d6fd8d62771484c118c9d279b4fc2c2563d50a1fcaf676cc93f60600bc0d3066de9a
+  checksum: 10c0/3b20598fc53811f1692a4c25f29c2a0f5bc844b034639336f57b331d014cccac92582cec738253abf5b039c82695ea0af4b9845b4eb87eabe3d2714610c07035
   languageName: node
   linkType: hard
 
@@ -5088,16 +5088,16 @@ __metadata:
 
 "@dsh-external/dsh-input-history@file:vendor/@dsh-external/dsh-input-history::locator=dsh-science%40workspace%3Adsh-science":
   version: 0.1.1
-  resolution: "@dsh-external/dsh-input-history@file:vendor/@dsh-external/dsh-input-history#vendor/@dsh-external/dsh-input-history::hash=f9b430&locator=dsh-science%40workspace%3Adsh-science"
+  resolution: "@dsh-external/dsh-input-history@file:vendor/@dsh-external/dsh-input-history#vendor/@dsh-external/dsh-input-history::hash=53a8c1&locator=dsh-science%40workspace%3Adsh-science"
   peerDependencies:
     cordis: "*"
-  checksum: 10c0/a85ff1511e8fff60237daf8a0ae371b8560c37f99193b911d21cf854f3b9fbeed45b7f6c8174ab56a4073611f7b3d40b5cff44f3523fd58718ed8f05f23464d2
+  checksum: 10c0/11bc3893de60608a35ee3ea642ea5e91ce64a997cbc8b2ea9441de48554897b677d927a77385a7b3b56420a4ab0e191150140b5563274a138ca5ffb9cda34cd7
   languageName: node
   linkType: hard
 
 "@dsh-external/dsh-session-search@file:vendor/@dsh-external/dsh-session-search::locator=dsh-science%40workspace%3Adsh-science":
   version: 0.1.0
-  resolution: "@dsh-external/dsh-session-search@file:vendor/@dsh-external/dsh-session-search#vendor/@dsh-external/dsh-session-search::hash=7ffadb&locator=dsh-science%40workspace%3Adsh-science"
+  resolution: "@dsh-external/dsh-session-search@file:vendor/@dsh-external/dsh-session-search#vendor/@dsh-external/dsh-session-search::hash=a84422&locator=dsh-science%40workspace%3Adsh-science"
   dependencies:
     schemastery: "npm:^3.18.0"
   peerDependencies:
@@ -5105,29 +5105,29 @@ __metadata:
     "@deepseek-ai/dsh-system-prompt": "*"
     "@deepseek-ai/dsh-tools": "*"
     cordis: "*"
-  checksum: 10c0/c0f5fbeb7b1a0d676e9c7639b0422371f37f0f3facfef320e7edd8dc4af27e1f02ed1335df881ef7b933fc0439efc68403c5f2b4b648631b4b2c876968815f62
+  checksum: 10c0/b3ecfa21fd389a0833fe22e48637cf026f893b920f65f2f8fa1665399980222fd0d6602cb52b40a5a6277464023efe49cd066cfc207cd4c9941ff4fc3380735a
   languageName: node
   linkType: hard
 
 "@dsh-external/dsh-ui-progress@file:vendor/@dsh-external/dsh-ui-progress::locator=dsh-science%40workspace%3Adsh-science":
   version: 0.9.1
-  resolution: "@dsh-external/dsh-ui-progress@file:vendor/@dsh-external/dsh-ui-progress#vendor/@dsh-external/dsh-ui-progress::hash=53cc65&locator=dsh-science%40workspace%3Adsh-science"
+  resolution: "@dsh-external/dsh-ui-progress@file:vendor/@dsh-external/dsh-ui-progress#vendor/@dsh-external/dsh-ui-progress::hash=b2edfd&locator=dsh-science%40workspace%3Adsh-science"
   peerDependencies:
     "@deepseek-ai/dsh-client-ui-primitives": "*"
     "@deepseek-ai/dsh-tool-todo": "*"
     cordis: "*"
     react: ^18.2.0
-  checksum: 10c0/f6018fc7a0c760f2bac4f48db10cdc1ce996524bbe6d5b14ab0a86c6b553ed96a528dedfaf8cc107854a9f7b1cb5ecce291d9de2ce54d522f819a340c2c27fc7
+  checksum: 10c0/ddeab7a41851d3c190b928e2ebf5e97ebe2a81233d8cf6371c29d682700b1964e279d186e18be64a50470406b9adc66f1e52a0723a9f3583327a1142aec9e999
   languageName: node
   linkType: hard
 
 "@dsh-external/zotero-harvest@file:vendor/@dsh-external/zotero-harvest::locator=dsh-science%40workspace%3Adsh-science":
   version: 0.2.0
-  resolution: "@dsh-external/zotero-harvest@file:vendor/@dsh-external/zotero-harvest#vendor/@dsh-external/zotero-harvest::hash=c89486&locator=dsh-science%40workspace%3Adsh-science"
+  resolution: "@dsh-external/zotero-harvest@file:vendor/@dsh-external/zotero-harvest#vendor/@dsh-external/zotero-harvest::hash=d1e711&locator=dsh-science%40workspace%3Adsh-science"
   peerDependencies:
     "@deepseek-ai/dsh-tools": "*"
     cordis: "*"
-  checksum: 10c0/4429858988fce655e13678164de3c6276a9c183866b8863fab2f987cd1eb9c7d89ead75b6d028420f395eb02a0226842612e9b1e96a8eb96985903fc42ccab8d
+  checksum: 10c0/8324d4d3ce62445b4a51f050f4211d82828c973e8216aa730f95e7deb5d9f8b11250daa129d726da4cb5093e3f8aa4fff6043c7ff4c4fe94b48f63bb4a128867
   languageName: node
   linkType: hard
 
@@ -5536,11 +5536,11 @@ __metadata:
 
 "@fisfzy/zotero-wave-rag@file:vendor/@fisfzy/zotero-wave-rag::locator=dsh-science%40workspace%3Adsh-science":
   version: 0.7.2
-  resolution: "@fisfzy/zotero-wave-rag@file:vendor/@fisfzy/zotero-wave-rag#vendor/@fisfzy/zotero-wave-rag::hash=ce5c83&locator=dsh-science%40workspace%3Adsh-science"
+  resolution: "@fisfzy/zotero-wave-rag@file:vendor/@fisfzy/zotero-wave-rag#vendor/@fisfzy/zotero-wave-rag::hash=b3de7e&locator=dsh-science%40workspace%3Adsh-science"
   peerDependencies:
     "@deepseek-ai/dsh-tools": "*"
     cordis: "*"
-  checksum: 10c0/12dad335c3ce831e47d6bd5fe4b1d3e475511d317138f83e8d88de4d2011d9a49e617821a9d473d580ac4739437fb8027624555db7e94b6dd7b8b96127141186
+  checksum: 10c0/cca194c6c35411b611b0c33b32dc53fa5d79fb55b0bf47d72a76af0e1f26d0fe47f17957d48611b6c515f3d87043967e66c083c53a31da8c916f186fbd625f7d
   languageName: node
   linkType: hard
 
@@ -10280,18 +10280,18 @@ __metadata:
 
 "dsh-danus@file:vendor/dsh-danus::locator=dsh-science%40workspace%3Adsh-science":
   version: 0.1.0
-  resolution: "dsh-danus@file:vendor/dsh-danus#vendor/dsh-danus::hash=11462c&locator=dsh-science%40workspace%3Adsh-science"
+  resolution: "dsh-danus@file:vendor/dsh-danus#vendor/dsh-danus::hash=c78ecf&locator=dsh-science%40workspace%3Adsh-science"
   dependencies:
     tsx: "npm:^4.19.0"
   peerDependencies:
     react: ^18.2.0
-  checksum: 10c0/b32375b2d71100ef1ead7dc69569ca3db8096aaaf88b39cfba1e7a3c88dc3fa6181ac48fa79e9ba3017b86257f1d34b95cfb04c28d4e8d29fa2e2ba71c0558cc
+  checksum: 10c0/e4d9a887fe67738aa0e2a2f56627af7a353def56bf34759ba844344edc66ed7bd2939bdde2400e1aa60835bca905253aad182099781f8d20df31705b3a79e991
   languageName: node
   linkType: hard
 
 "dsh-ego-browser@file:vendor/dsh-ego-browser::locator=dsh-science%40workspace%3Adsh-science":
   version: 0.8.0
-  resolution: "dsh-ego-browser@file:vendor/dsh-ego-browser#vendor/dsh-ego-browser::hash=17a852&locator=dsh-science%40workspace%3Adsh-science"
+  resolution: "dsh-ego-browser@file:vendor/dsh-ego-browser#vendor/dsh-ego-browser::hash=73c6cf&locator=dsh-science%40workspace%3Adsh-science"
   dependencies:
     "@deepseek-ai/schemastery": "npm:^3.18.1"
   peerDependencies:
@@ -10320,14 +10320,14 @@ __metadata:
       optional: true
     schemastery:
       optional: true
-  checksum: 10c0/0cf347bfd1ba3917b1c9e465ad5688ea73ff8cb2080b36b219c65389f7d7aa09464247e5226c0fe030a73092860bb4a05345c4f7b11d5b8843f0d4bf2dd7a8e1
+  checksum: 10c0/931731e1b2b668684670c5ecf4646adadd4fe1c1742685589c6eb37f99a014fc2f66e386505286f2bc80ba23a0e0f4a5d5398649134383e27f22cb66a81fb7b3
   languageName: node
   linkType: hard
 
 "dsh-focus-chat@file:vendor/dsh-focus-chat::locator=dsh-science%40workspace%3Adsh-science":
   version: 0.1.0
-  resolution: "dsh-focus-chat@file:vendor/dsh-focus-chat#vendor/dsh-focus-chat::hash=a96cc9&locator=dsh-science%40workspace%3Adsh-science"
-  checksum: 10c0/b2897cf6997152507cc59c65e9d9ba50a49b584068771acf80b8f8608fe1efcffd9eee1f6243b6bf904f9b0e6081d228cddff8a6e17c4199254d05b6de8d3b48
+  resolution: "dsh-focus-chat@file:vendor/dsh-focus-chat#vendor/dsh-focus-chat::hash=482897&locator=dsh-science%40workspace%3Adsh-science"
+  checksum: 10c0/a98a608c8d546f5291dc7aaa2990f1bb25252eaf8b58049915417bc3c127461f78e9b208d2f63388ce928247900f949f0d83958a1d53fd64298abb88080d0c6c
   languageName: node
   linkType: hard
 
@@ -10544,7 +10544,7 @@ __metadata:
 
 "dsh-ventus-plugins@file:vendor/dsh-ventus-plugins::locator=dsh-science%40workspace%3Adsh-science":
   version: 0.2.0
-  resolution: "dsh-ventus-plugins@file:vendor/dsh-ventus-plugins#vendor/dsh-ventus-plugins::hash=8a1b6d&locator=dsh-science%40workspace%3Adsh-science"
+  resolution: "dsh-ventus-plugins@file:vendor/dsh-ventus-plugins#vendor/dsh-ventus-plugins::hash=8ec42f&locator=dsh-science%40workspace%3Adsh-science"
   dependencies:
     "@codemirror/commands": "npm:^6.10.4"
     "@codemirror/lang-cpp": "npm:^6.0.3"
@@ -10599,7 +10599,7 @@ __metadata:
     "@deepseek-ai/dsh-llm": "*"
     "@deepseek-ai/dsh-system-prompt": "*"
     "@deepseek-ai/dsh-tools": "*"
-  checksum: 10c0/6df65bc36c623a141a474dd4f6d23e8a86bd374cac8a969df5e04b85d8f9aa553abdf0492d87cee14367fcdf17cae492472d64f41dcbd500afa3118e6df515a5
+  checksum: 10c0/149cf164e1c50cedb8f21d91fc15ba775e28f656a42722c6d9dadd11e83f2286ab29a96646c44297bb2d1c9e69a9cdc67dfc4c85318c4cb23808da527b45f5be
   languageName: node
   linkType: hard
 
