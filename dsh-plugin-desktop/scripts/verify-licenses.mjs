@@ -11,7 +11,7 @@
  */
 
 import { createRequire } from 'node:module'
-import { existsSync, readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -59,9 +59,24 @@ const DOCUMENTED_EXCEPTIONS = new Map([
   ['@univerjs-pro/cli-assets', 'owner-distributed internal build; see docs/science-layer.md'],
   ['@univerjs-pro/engine-formula-rust-binding', 'owner-distributed internal build; see docs/science-layer.md'],
   ['@univerjs-pro/exchange-node-binding', 'owner-distributed internal build; see docs/science-layer.md'],
-  ['@univerjs-pro/engine-formula-rust-binding-win32-x64-msvc', 'owner-distributed internal build; see docs/science-layer.md'],
-  ['@univerjs-pro/exchange-node-binding-win32-x64-msvc', 'owner-distributed internal build; see docs/science-layer.md'],
 ])
+
+/**
+ * Exception prefixes cover every per-platform variant of a package family
+ * (the @univerjs-pro bindings publish one package per os/cpu/libc triple).
+ */
+const DOCUMENTED_EXCEPTION_PREFIXES = [
+  ['@univerjs-pro/', 'owner-distributed internal build; see docs/science-layer.md'],
+]
+
+function documentedException(name) {
+  const exact = DOCUMENTED_EXCEPTIONS.get(name)
+  if (exact !== undefined) return exact
+  for (const [prefix, reason] of DOCUMENTED_EXCEPTION_PREFIXES) {
+    if (name.startsWith(prefix)) return reason
+  }
+  return undefined
+}
 
 /**
  * An SPDX `OR` expression passes when at least one branch is redistributable.
@@ -107,6 +122,15 @@ function licenseExpression(manifest) {
   return undefined
 }
 
+/** Case-insensitive LICENSE lookup: package authors ship LICENSE, licence, license.md, ... */
+function hasLicenseFileIn(packageDir) {
+  try {
+    return readdirSync(packageDir).some(entry => /^licen[cs]e(?:\.(?:md|txt))?$/iu.test(entry))
+  } catch {
+    return false
+  }
+}
+
 const failures = []
 const seen = new Set()
 const manifests = []
@@ -119,14 +143,12 @@ for (let index = 0; index < queue.length; index += 1) {
   const manifest = JSON.parse(readFileSync(current.manifestPath, 'utf8'))
 
   if (current.name !== rootManifest.name) {
-    const exception = DOCUMENTED_EXCEPTIONS.get(current.name)
+    const exception = documentedException(current.name)
     if (exception !== undefined) {
       manifests.push({ name: current.name, version: manifest.version, license: `${licenseExpression(manifest) ?? 'NONE'} (exception: ${exception})` })
     } else {
       const license = licenseExpression(manifest)
-      const hasLicenseFile = existsSync(join(dirname(current.manifestPath), 'LICENSE'))
-        || existsSync(join(dirname(current.manifestPath), 'LICENSE.md'))
-        || existsSync(join(dirname(current.manifestPath), 'LICENSE.txt'))
+      const hasLicenseFile = hasLicenseFileIn(dirname(current.manifestPath))
       if (license === undefined && !hasLicenseFile) {
         failures.push(`${current.name}: no license field and no LICENSE file`)
       } else if (license !== undefined && license.startsWith('SEE LICENSE IN ')) {
