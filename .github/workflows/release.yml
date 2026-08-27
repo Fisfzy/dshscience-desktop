@@ -113,7 +113,7 @@ jobs:
           gh release upload "$env:RELEASE_TAG" `
             --repo "${{ github.repository }}" --clobber `
             "dsh-plugin-desktop/dist/DSH-Desktop-*-x64-Setup.exe" `
-            "dsh-plugin-desktop/dist/DSH-Desktop-*-x64-Portable.exe"
+            "dsh-plugin-desktop/dist/DSH-Desktop-*-x64-Portable.zip"
 
   macos:
     needs: draft
@@ -170,7 +170,7 @@ jobs:
           key: yarn-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('yarn.lock', '.yarnrc.yml') }}
       - run: yarn install --immutable
       - name: Build Linux AppImage and tar.gz
-        run: yarn workspace dsh-plugin-desktop dist:linux
+        run: yarn dist:linux
       - name: Upload Linux artifacts
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
