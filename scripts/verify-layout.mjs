@@ -27,8 +27,12 @@ if (JSON.stringify(workspace.workspaces) !== JSON.stringify([
   'dsh-community-fabric',
   'dsh-community-market',
   'dsh-science',
+  'dsh-science/vendor/*',
+  'dsh-science/vendor/@deepseek-ai/*',
+  'dsh-science/vendor/@dsh-external/*',
+  'dsh-science/vendor/@fisfzy/*',
 ])) {
-  fail('the root Yarn workspace must contain the desktop, community-fabric, community-market, and science packages')
+  fail('the root Yarn workspace must contain the desktop, community-fabric, community-market, and science packages (including the vendored science plugins)')
 }
 for (const [name, manifest] of [
   ['dsh-plugin-desktop', plugin],

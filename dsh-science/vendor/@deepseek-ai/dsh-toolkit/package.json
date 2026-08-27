@@ -14,9 +14,9 @@
     "prepack": "npm run build:all"
   },
   "peerDependencies": {
+    "@deepseek-ai/dsh-invariants": "*",
     "@deepseek-ai/dsh-tools": "*",
-    "cordis": "*",
-    "@deepseek-ai/dsh-invariants": "*"
+    "cordis": "*"
   },
   "dsh": {
     "bundle": {

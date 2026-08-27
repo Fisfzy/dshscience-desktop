@@ -34,14 +34,5 @@
   "peerDependencies": {
     "cordis": "*"
   },
-  "devDependencies": {
-    "@deepseek-ai/dsh-client-runtime": "^0.0.1-rc.1",
-    "@deepseek-ai/dsh-client-ui-conversation": "^0.0.1-rc.1",
-    "@deepseek-ai/dsh-invariants": "^0.0.1-rc.1",
-    "cordis": "^4.0.0-rc.7",
-    "tsdown": "^0.22.2",
-    "typescript": "^6.0.3",
-    "vitest": "^4.1.8"
-  },
   "license": "BSD-3-Clause"
 }

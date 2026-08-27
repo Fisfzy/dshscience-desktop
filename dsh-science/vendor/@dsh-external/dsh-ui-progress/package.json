@@ -36,26 +36,5 @@
     "cordis": "*",
     "react": "^18.2.0"
   },
-  "devDependencies": {
-    "@deepseek-ai/dsh-client-locale": "link:../.dsh/source/current/packages/client/locale",
-    "@deepseek-ai/dsh-client-runtime": "link:../.dsh/source/current/packages/client/runtime",
-    "@deepseek-ai/dsh-client-ui-conversation": "link:../.dsh/source/current/packages/client/ui-conversation",
-    "@deepseek-ai/dsh-client-ui-primitives": "link:../.dsh/source/current/packages/client/ui-primitives",
-    "@deepseek-ai/dsh-client-ui-slots": "link:../.dsh/source/current/packages/client/ui-slots",
-    "@deepseek-ai/dsh-invariants": "link:../.dsh/source/current/packages/support/invariants",
-    "@deepseek-ai/dsh-tool-todo": "link:../.dsh/source/current/packages/todo/tool-todo",
-    "@testing-library/react": "^16.1.0",
-    "@types/react": "~18.3.1",
-    "@types/react-dom": "^18.3.1",
-    "clsx": "^2.1.1",
-    "cordis": "link:../.dsh/source/current/vendor/cordis",
-    "jsdom": "^26.0.0",
-    "lightningcss": "^1.32.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tsdown": "^0.22.2",
-    "typescript": "^5.9.3",
-    "vitest": "^4.1.1"
-  },
   "license": "BSD-3-Clause"
 }
